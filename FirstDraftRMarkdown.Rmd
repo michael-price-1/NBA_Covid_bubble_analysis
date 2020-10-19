@@ -1,0 +1,155 @@
+---
+title: "Analyzing the Effects of the NBA COVID Bubble on the NBA Playoffs"
+subtitle: "A Case Study for Home-Court Advantage"
+author: |
+  | Michael Price
+  | michael.price@uconn.edu
+  | Department of Statistics, University of Connecticut
+  | Dr. Jun Yan
+  | jun.yan@uconn.edu
+  | Department of Statistics, University of Connecticut
+date: "10/19/2020"
+output: pdf_document
+---
+#Abstract: 
+Due to the COVID-19 pandemic the 2020 NBA playoffs were played inside of a bubble in Disney World. This meant that there would be no fans in attendance and no traveling for teams which should result in removing home-court advantage from the games. This idea was a hot topic of discussion as analysts and fans were concerned over the possible effects it may have on the outcome of playoff games. Home court advantage has historically played a huge role in NBA playoff series outcomes. Thus, to study the effects of the bubble(and home-court advantage) the 2020 season can be compared to the 2017, 2018, and 2019 playoffs. While many factors contribute to the outcome of games, the bottom line is that points scored is the deciding factor of who wins games so scoring will be the primary focus of this study. The measures of interest are team scoring totals and team shooting percentage on two pointers, three pointers, and free throws. Comparing these measures for home teams and away teams in 2020 vs. 2017-2019 shows how the 2020 playoffs favored away teams more than normal.
+
+\newpage
+# I. Introduction  
+|   Home court advantage is often discussed in sports circles as a contributing factor to the outcome of games. It is well known that the home team typically benefits from some competitive edge from playing at their home court, resulting in a better chance of winning. Due to this fact, the NBA playing the 2020 playoffs in a bubble brought a great deal of concern for fans, teams, journalists, and others. Specific details about anticipated effects are discussed in Steve Aschburner’s article “How Orlando's Neutral Site Will Impact Teams, Referees and Games”(2020). Aschburner explains that due to the unprecedented circumstances nobody was really sure exactly how the NBA playoffs would play out. Aschburner also voiced some concern about the potential effects of removing home-court advantage. The NBA did make attempts to recreate the effects by putting the "home” team logo on the court and allowing the "home" team to play crowd noise and music, but most people doubted these attempts would recreate a true playoff atmosphere. During the 2020 NBA playoffs, home teams only won about 48.2% of the games. This was indeed lower than normal, which is better represented using the 2017-2019 NBA playoff data where home teams won 61.32% of games. This shift in the home team winning percentage surely indicates the need for more thorough research and investigation.  
+
+|   So, what happened? Did the home teams fail to perform up to normal standards without the help of home-court advantage? Were away teams able to rise to the occasion and perform better not having to deal with the headache of going on the road? This paper seeks to answer just that, using scoring totals and scoring efficiency as indicators of team performance. This study will also deepen understanding of how home-court advantage affects home and away teams on a nightly basis in the NBA.  
+
+|  This study is quite different from previous home-court advantage studies. By using the neutral site games of 2020 we will get to compare home and away performance to a control. Typically, studies just compare home vs away performance. These studies don’t separate the effects of home-court advantage into the specific effect on the home team and the specific effect on the away team. They’re focused mainly on the fact home teams typically outperform away teams.There are some similar studies that use college basketball, which does play some neutral court games during their season, but these studies still mainly focus on whether or not home teams outperform away teams and not how home and away teams are impacted individually. Examples of these studies will be reviewed in greater detail in Section II Literature Review.  
+
+|  This study will compare home team performance in 2020 at a neutral site with no fans vs. 2017-19 playoffs with fans. Likewise, away team performance in 2020 at a neutral site with no fans vs. 2017-19 playoffs with fans. By comparing home teams in 2020 to home teams in 2017-19 and away teams in 2020 to away teams in 2017-19, I can add a new perspective to the field of research. This will allow for a more accurate understanding of the effects of home-court advantage on home and away teams in the NBA. We won’t just see that home-court advantage helps home teams outperform away teams, but this study will actually dissect the effects of home-court advantage on home teams and away teams performance individually. I want to add how home-court advantage actually comes to fruition to build on the existing knowledge that there is a home-court advantage effect. 
+
+|  9 statistical tests can be run to understand the differences in 2020 vs. previous years. First, whether or not the difference between home win percentage in 2020 and 2017-19 is statistically significant. To confirm the difference we see in the winning percentage is truly significant. Then we can look for differences in home scoring in 2020 vs 2017-2019. Similarly, we can do the same test, but for differences in away scoring in 2020 vs 2017-2019. Also, differences in team shooting(for two pointers, three pointers, and free throws) from 2020 vs 2017-2019 for both home and away teams. The results from these simple tests will bring a new understanding of how home-court advantage is impacting games by altering the performance of the home and away teams.  
+
+# II. Literature Review  
+|	There is tons of published literature on the effects of home-court advantage. Jason Kotecki(2014) studies the impact of home-court advantage on winning in the NBA. Kotecki finds that home-court advantage is found when using performance-based statistics. Kotecki specifically cites field goal percentage, free throw percentage, and points. All of which he proves to be significantly impacted by home-court. Kotecki concludes that home teams will play better at home in front of their home fans. This is done by comparing home performance vs. away performance in games. This is similar to many other studies in this field. Given the data and circumstances, this has been the best way to study the effects in the NBA.
+
+|	College basketball, as noted before, does provide some opportunity to study home-court vs. neutral court. One study conducted by David A. Harville and Michael H. Smith studied the effect of home court advantage using the 1991-1992 college basketball season. This study design is more similar to my own. Unlike the NBA, it is not uncommon to have a few games played at neutral sites during the college basketball season. This allowed them to construct two samples, one of home teams and one of neutral teams. They formulate their study as a regression equation predicting the expected difference in score for home teams. They set up their study to find if the home teams won games by more points when they had home court advantage vs. when playing at neutral court. This study succeeds in proving that home-court advantage exists. However, it doesn’t allow them to make inferences about how home-court advantage specifically impacts home and away performance. Like other research in the field its focus is on the fact that home teams outperform away teams.
+
+```{r setup, include=FALSE}
+#Data Collection
+game_log_2020<-read.csv("Desktop/Thesis/2020 game data.csv", header=T, sep = ",")
+game_log_2017_2019<-read.csv("Desktop/Thesis/2017 2019 game data.csv", header=T)
+
+#Data Cleaning
+game_log_2020$W.L<-ifelse(game_log_2020$W.L=="W", 1, 0)
+game_log_2017_2019$W.L<-ifelse(game_log_2017_2019$W.L=="W", 1, 0)
+
+game_log_2020_home<-game_log_2020[game_log_2020$Home.Away=="FALSE",]
+game_log_2020_away<-game_log_2020[game_log_2020$Home.Away=="TRUE",]
+game_log_2017_2019_home<-game_log_2017_2019[game_log_2017_2019$Home.Away=="FALSE", ]
+game_log_2017_2019_away<-game_log_2017_2019[game_log_2017_2019$Home.Away=="TRUE", ]
+
+years<-2010:2020
+winpct<-c(.6707, .667, .679, .635, .562, .593, .6744, .5696, .707, .561, .482)
+```
+
+# III. Data Collection and Methods  
+|  The 2020 bubble provides a new and exciting opportunity to study home-court advantage for the NBA. Unlike college basketball, aside from a few exhibition/preseason games, the NBA always has a home and away team. So, for the first time in NBA history the bubble allows NBA home and away performance to be compared vs a control/neutral field. To construct this study data was collected from the official NBA website, NBA.com. The NBA bubble featured 8 seeding games then a standard playoff format. The focus of this study was the play during the playoff games since it followed the standard playoff format and can easily be compared back to other playoffs. So, this study was designed to compare the 2020 playoffs to the three previous playoffs collectively. It is important to make sure that any observed differences are truly from a home-court advantage. So, in order to control for the changing play style of the NBA, we will limit the study to 2020 vs 2017-2019. The reason being the faster pace play and more common use of the three-point shot in modern basketball. If we used data from say 10 years ago, or earlier, observed differences may not be from effects of the NBA bubble, but rather from the effects of drastic changes in the style of play between the seasons. However, basketball evolves relatively slowly so we can reasonably assume 2017-2019 are at least very close in pace and playing style to 2020.  
+
+  The main variables of interest are whether or not the home team won, scoring totals for home and away teams, and shooting percentages for home and away teams on two pointers, three pointers, and free throws. While many other measures could be used for measuring the outcome of the game and team performance, scoring seemed to be the most important. The winner of a game is determined by who scores more points. So, naturally when studying the outcome of winning, changes in scoring and scoring efficiency are important to understand.  
+  
+  Home court advantage is the basic idea that the home team is more likely to win. So laying a foundation of typical home-court advantage is crucial. Before focusing on the 2017 to 2020 playoffs we can take a quick look at home team win percentages since 2010. Notice on the graph below(Figure 1), the 10 years before 2020, the home team winning percentage ranged from around 0.56 to 0.7 and never dipped below .5. The 2020 bubble, however, broke this historic pattern dipping down below .5. Foreshadowing, the confirmation of the expectation that the effect of home-court advantage was removed in the 2020 playoffs.  
+
+##Figure 1
+```{r, echo=FALSE}
+plot(years, winpct, ylim = c(0,1), title("NBA Home Playoff Win % Since 2010"), col = ifelse(winpct==.494, "Red", "Black"), pch=16)
+text(years, winpct, labels = winpct, cex = 0.5, pos = 1)
+text(2010, 0.51, labels = "0.5", cex = 0.6, col = "Green")
+abline(h=0.5, col = "Green")
+```
+   
+  Moving on to the main focus of the study, comparing 2020 to 2017-2019. First, a brief look at the distribution of scoring depicted below in Figure 2. The green histograms indicate home and red histograms indicate away scoring. The top row is scoring for 2020 and the bottom is scoring for 2017-2019. All histograms seem to be fairly normally distributed which is important for statistical analysis. It’s hard to see any clear differences between years, but it’s important to look at and understand the distribution of measures before moving onto the analysis.  
+
+##Figure 2
+```{r, echo=FALSE}
+opar<-par(no.readonly = TRUE)
+par(mfrow=c(2,2))
+hist(game_log_2020_home$PTS, xlab = "Points", col = "green",  xlim = c(60, 160), main = "Home 2020")
+hist(game_log_2020_away$PTS,  xlab = "Points", col = "red",  xlim = c(60, 160), main = "Away 2020")
+hist(game_log_2017_2019_home$PTS, xlab = "Points", col="green",  xlim = c(60, 160), main = "Home 2017-2019" )
+hist(game_log_2017_2019_away$PTS, xlab = "Points", col = "red",  xlim = c(60, 160), main = "Home 2017-2019", breaks = 8 )
+par(opar)
+```
+   
+  Figure 3 shows home shooting for two pointers, three pointers and free throws for 2020(top) vs. 2017-19(bottom). The histograms appear to be fairly similarly distributed between 2020 and 2017-19. Likewise, Figure 4, shows the same data except for away teams. Just like Figure 3, Figure 4 histograms don’t show any obvious differences. The normality of the distributions for both figures 3 and 4 are important for meeting the required assumptions for statistical analysis.
+  
+##Figure 3
+```{r, echo=FALSE}
+opar<-par(no.readonly = TRUE)
+par(mfrow=c(2,3))
+hist(game_log_2020_home$X2P., xlab = "Shooting Percentage", col= "green", main = "2020 Home 2 pointers", xlim = c(20, 70))
+hist(game_log_2020_home$X3P., xlab = "Shooting Percentage", col= "green", main = "2020 Home 3 pointers", xlim = c(10, 70))
+hist(game_log_2020_home$FT., xlab = "Shooting Percentage", col= "green", main = "2020 Home Free Throws", xlim = c( 50, 100))
+hist(game_log_2017_2019_home$X2P., xlab = "Shooting Percentage", col= "green", main = "2017-2019 2 pointers", xlim = c(20, 70))
+hist(game_log_2017_2019_home$X3P., xlab = "Shooting Percentage", col= "green", main = "2017-2019 3 pointers", xlim = c(10, 70))
+hist(game_log_2017_2019_home$FT., xlab = "Shooting Percentage", col= "green", main = "2017-2019 Free Throws", xlim = c( 50, 100))
+par(opar)
+```
+  
+##Figure 4
+```{r, echo=FALSE}
+opar<-par(no.readonly = TRUE)
+par(mfrow=c(2,3))
+hist(game_log_2020_away$X2P., xlab = "Shooting Percentage", col= "red", main = "2020 Away 2 pointers", xlim= c(30, 80))
+hist(game_log_2020_away$X3P., xlab = "Shooting Percentage", col= "red", main = "2020 Away 3 pointers", xlim = c(10, 60))
+hist(game_log_2020_away$FT., xlab = "Shooting Percentage", col= "red", main = "2020 Away Free Throws", xlim = c(40, 100))
+hist(game_log_2017_2019_away$X2P., xlab = "Shooting Percentage", col= "red", main = "2017-19 Away 2 pointers", xlim= c(30, 80))
+hist(game_log_2017_2019_away$X3P., xlab = "Shooting Percentage", col= "red", main = "2017-19 Away 3 pointers", xlim = c(10, 60))
+hist(game_log_2017_2019_away$FT., xlab = "Shooting Percentage", col= "red", main = "2017-19 Away Free Throws", xlim = c(40, 100))
+par(opar)
+```
+  
+  Given the approximate normality of data, 9 different z-tests were performed in order to test the effects of the COVID bubble on the 2020 NBA playoffs. The 9 questions answered were:  
+* Is the home team winning percentage in 2020 different than that it was in 2017-2019?  
+* Is the average home team scoring different in 2020 than it was over 2017-2019?  
+* Is the average away team scoring different in 2020 than it was over 2017-2019?  
+* Are home teams making two pointers at the same rate in 2020 as 2017-2019?  
+* Are home teams making three pointers at the same rate in 2020 as 2017-2019?  
+* Are home teams making free throws at the same rate in 2020 as 2017-2019?  
+* Are away teams making two pointers at the same rate in 2020 as 2017-2019?  
+* Are away teams making three pointers at the same rate in 2020 as 2017-2019?  
+* Are away teams making free throws at the same rate in 2020 as 2017-2019?  
+
+# IV. Analysis and Results
+
+Measure | 2020 | 2017-19 | 95% CI | Test Statistic | P-value 
+--------|------|---------|--------|----------------|--------
+Home Team Win % | .482 | 0.613 | (-0.255, -0.0075) | 2.091 | 0.0365
+Home Team Scoring | 110.06 | 108.103 | (-1.253, 5.168) | 1.195 | 0.2321
+Away Team Scoring | 109.06 | 104.025 | (2.083, 7.988) | 3.3424 | 0.00083
+Home 2 Pt% | 0.523 | 0.515 | (-0.011, 0.025) | 0.783 | 0.4335
+Home 3 Pt% | 0.363 | 0.357 | (-0.014, 0.027) | 0.563 | 0.5733
+Home FT% | 0.793 | 0.774 | (-0.001, 0.041) | 1.817 | 0.069
+Away 2 Pt% |  0.536 | 0.504 | (0.0147, 0.0503) | 3.587 | 0.00033
+Away 3 Pt% | 0.357 | 0.346 | (-0.01, 0.031) | 0.983 | 0.3256
+Away FT% | 0.783 | 0.777 | (-0.017, 0.027) | 0.531 | 0.6601
+
+*Note: P-values still significant after Bonferroni correction(multiplying p-value 9 for each test conducted) are denoted by highlighter yellow. Those significant before, but not after Bonferroni correction are denoted by peach.*  
+	Starting from the top of the table, we see a statistically significant decrease in home win percentage in 2020 from 2017-19, with p-value of 0.0365. This confirms our belief that home-court advantage was lost in the 2020 NBA playoffs. However, after accounting for multiple tests using Bonferroni correction the p-value is no longer significant. So, we may only cautiously say there is evidence that home-court advantage was not a factor in 2020.  
+	
+|	Home team performance did not seem to be negatively impacted by losing home-court advantage like expected. Home scoring, two point, three point shooting and  free throw shooting all show no significant difference, on average, between 2020 vs. 2017-19. Home teams do not appear to have any evidence suggesting they played at a lower level in 2020 than they did in previous years when they had home-court advantage.  
+	
+	Away teams saw more of an impact than home teams. For starters, they saw a significant increase in mean points per game by about 5 points (95% CI: 2.083, 7.988). This is important to note because like we said before it’s scoring points that allows teams to win basketball games, so this is evidence that away teams performed better in the bubble. Likewise, the away team two point shooting efficiency increased by an average of about 0.03 (95% CI: 0.0147, 0.0503). However, unlike two point shooting, away teams did not see a statistically significant difference in three point and free throw shooting. Unlike home teams, away teams do have evidence of change in performance in the bubble. The away teams seemed to perform better than they would under normal conditions as a visiting team.  
+
+# V. Discussion 
+|	We definitely see an impact of playing the 2020 NBA playoffs in the bubble, there were some minor surprises in the results of the study, but overall it seemed that away teams fared better in the bubble than previous years. Starting from the dip in home winning percentage to below .482 it’s clear something was different. Although the results were not significant after a Bonferroni correction it’s still important to consider and understand that home teams seemed to struggle to win compared to normal conditions.  
+|	Moving on to total scoring. As previously stated, this is perhaps the most important measure of a basketball game given that it is what ultimately decides the winner. So these conclusions are particularly interesting and valuable. While the home teams in 2020 did see a slight uptick in average scoring it was not large enough to be statistically significant. However, away team average scoring did increase by a statistically significant amount. This goes hand in hand with our intuition and conclusion about the home winning percentage decreasing. If away teams are scoring significantly more and home teams are not, then we expect to see away teams winning a larger amount of games. This may give a little more reason to believe the conclusion that there was a significant decrease in home winning percentage, despite failing to be significant after Bonferroni correction.  Also, these conclusions give reason to believe that home-court advantage stems mainly from adverse effects on the visiting team.  
+|  So away teams are scoring more points, where are those points coming from? The initial thought should be shooting percentage. It seems pretty obvious if you shoot better from the field you are going to score more points. Here we found that away teams are shooting significantly better from two-point shots. However, we know the three point shooting and free-throw shooting were not significantly different. Also, it is important to remember that there’s other factors besides scoring that may affect outcome of games, but were not considered in this study. Another future study may want to look into other potential factors to help understand and expand on how away teams improved.  
+|  Surprisingly, it appeared for the most part that home team performance was unaffected by playing in the bubble. They saw some slight insignificant increases in total scoring, two point shooting, three point shooting and free throw shooting. The home teams did not appear to perform any differently, in terms of scoring and scoring efficiency, while playing on a neutral court.  
+|  Overall, it appears that away teams were able to close the gap with home teams with home-court advantage removed. Away teams significantly increased their scoring, partly due to the fact of increased two point shooting efficiency. However, there are other potential sources of added scoring worth researching. For example, turnovers, steals, assist, rebounds, and many more game statistics. There are plenty of other possibilities besides just shooting efficiency to pick through looking for more possible sources of added points for away teams. Ultimately, home teams were not largely impacted in terms of their overall performance. It seems their failure to win in 2020, is more due to better away performance than any decrease in their own performance. In fact, the only significant change for home teams found in this study was actually an improvement.  
+
+# VI. Conclusion
+|	Separating the effects of the home-court advantage into home effects and away effects allowed for some interesting new insights. Previously, we knew that on average home teams outperformed away teams. It was less clear whether it was from positive effects on the home team or negative effects on the road team or perhaps a bit of both. The biggest takeaway from this study is the main source of home court-advantage is the negative effects playing on the road away teams face. Home court advantage may better be categorized as an away team disadvantage. In 2020 there wasn’t any evidence of regression for home team performance, based on the performance measures used, despite being stripped of home-court advantage. Yet, home teams lost about 13% more of games in the 2020 playoffs than the typical average. And this was because of the improvement of away teams. No longer having to face the struggle of traveling, pressure from opposing fans, or playing on an unfamiliar court, teams saw an improvement in their play. They found a way to put more points on the board and ultimately win more. At least some of that improvement came from significantly higher two point efficiency. Future studies may want to use the 2020 NBA bubble and compare vs previous years using other performance measures. This will further help explain what is lost in the performance of away teams when they travel to opposing arenas. This study is only the beginning of possibilities for studies using the 2020 NBA bubble as a case study for home-court advantage.  
+
+##References
+Aschburner, Steve.(2020) “How Orlando's Neutral Site Will Impact Teams, Referees and Games.” NBA.com, National Basketball Association,        www.nba.com/article/2020/06/22/season-restart-home-court-advantage-no-more. 
+
+Harville, D., & Smith, M. (1994). The Home-Court Advantage: How Large Is It, and Does It Vary from Team to Team? The American Statistician, 48(1), 22-28. doi:10.2307/2685080
+
+Kotecki, Jason '14 (2014) "Estimating the Effect of Home Court Advantage on Wins in the  NBA," The Park Place Economist: Vol. 22 Available at: http://digitalcommons.iwu.edu/parkplace/vol22/iss1/13
