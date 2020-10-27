@@ -209,11 +209,11 @@ efficiency are important to understand.
 Home-court advantage is the basic idea that the home team is more likely to win.
 So laying a foundation of typical home-court advantage is crucial. Before 
 focusing on the 2017 to 2020 playoffs we can take a quick look at home team win
-percentages since 2010. Notice on the graph below in Figure 1, the
-10 years before 2020, the home team winning percentage ranged from around 0.56
-to 0.7 and never dipped below .5. The 2020 bubble, however, broke this historic
-pattern dipping down below .5. Foreshadowing, the confirmation of the expectation
-that the effect of home-court advantage was removed in the 2020 playoffs.
+percentages since 2010. Notice in Figure 1, the10 years before 2020, the home team
+winning percentage ranged from around 0.56 to 0.7 and never dipped below .5. The 
+2020 bubble, however, broke this historicpattern dipping down below .5. Foreshadowing, 
+the confirmation of the expectationthat the effect of home-court advantage was removed
+in the 2020 playoffs.
 
 ```{r Fig1, echo=FALSE, fig.cap = "Winning percentage of NBA home teams in the playoffs since 2010, the green line denotes .500. ", fig.align='center'}
 plot(years, winpct, ylim = c(0,1), title("NBA Home Playoff Win % Since 2010"), col = ifelse(winpct==.482, "Red", "Black"), pch=16)
@@ -223,7 +223,7 @@ abline(h=0.5, col = "Green")
 ```
    
 Moving on to the main focus of the study, comparing 2020 to 2017-2019. First, 
-a brief look at the distribution of scoring depicted below in Figure 2.
+a brief look at the distribution of scoring depicted in Figure 2.
 The green histograms indicate home and red histograms indicate away scoring. The
 top row is scoring for 2020 and the bottom is scoring for 2017-2019. All histograms
 seem to be fairly normally distributed which is important for statistical analysis.
