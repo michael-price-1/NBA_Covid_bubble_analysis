@@ -255,8 +255,7 @@ data except for away teams. Just like Figure 3, Figure 4 histograms don’t show
 obvious differences. The normality of the distributions for both figures 3 and 4
 are important for meeting the required assumptions for statistical analysis.
 
-(ref:cap-Figthree) Home shooting percentages for two pointers, three pointers and free throws for 2020(top) vs. 2017-19 (bottom)
-```{r Figthree, echo=FALSE, fig.cap="(ref:cap-Figthree)"}
+```{r Figthree, echo=FALSE, fig.cap="Home shooting percentages for two pointers, three pointers and free throws for 2020(top) vs. 2017-19 (bottom)"}
 opar<-par(no.readonly = TRUE)
 par(mfrow=c(2,3))
 
