@@ -175,7 +175,7 @@ years <- 2010:2020
 winpct <- c(.6707, .667, .679, .635, .562, .593, .6744, .5696, .707, .561, .482)
 ```
 
-# III. Data Collection and Methods  
+# III. Data and Methods  
 The 2020 bubble provides a new and exciting opportunity to study home-court
 advantage for the NBA. Unlike college basketball, aside from a few 
 exhibition/preseason games, the NBA always has a home and away team. So, for
