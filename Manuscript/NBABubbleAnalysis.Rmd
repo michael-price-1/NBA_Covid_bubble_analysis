@@ -17,7 +17,7 @@ bibliography: citations.bib
 biblio-style: asa
 output: pdf_document
 ---
-#Abstract: 
+Abstract: 
 The 2020 NBA playoffs were played inside of a bubble in Disney World because of
 the COVID-19 pandemic. This meant that there would be no fans in attendance, 
 games played on neutral courts and no traveling for teams which in theory 
@@ -364,7 +364,7 @@ nine <- prop.test(x=c(sum(game_log_2020_away$FTM), sum(game_log_2017_2019_away$F
 rownine <- c(as.numeric(nine$estimate[1]), as.numeric(nine$estimate[2]), 
              nine$conf.int,  sqrt(as.numeric(nine$statistic)), nine$p.value)
 
-titles <- c(2020, "2017-19", "95% CI Low", "95% CI Up", "Test Statistic", "P-value")
+titles <- c(2020, "2017-19", "95% CI LL", "95% CI UL", "Test Stat.", "P-value")
 rows <- c("Home Team Win %", "Home Team Scoring", "Away Team Scoring", "Home Team 2P%", "Home Team 3P%",
           "Home Team FT%", "Away Team 2P%", "Away Team  3P%", "Away Team FT%")
 results <- data.frame(rowone, rowtwo, rowthree, rowfour, rowfive, rowsix,
