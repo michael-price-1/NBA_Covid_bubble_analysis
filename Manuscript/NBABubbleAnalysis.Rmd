@@ -304,7 +304,8 @@ hist(game_log_2017_2019_away$FT., xlab = "Shooting Percentage", col= "red",
 par(opar)
 ```
   
-  Given the approximate normality of data, 9 different z-tests were performed in order to test the effects of the COVID bubble on the 2020 NBA playoffs. The 9 questions answered were:  
+  Given the approximate normality of data, 9 different z-tests were performed in 
+  order to test the effects of the COVID bubble on the 2020 NBA playoffs. The 9 questions were:  
 * Is the home team winning percentage in 2020 different than that it was in 2017-2019?  
 * Is the average home team scoring different in 2020 than it was over 2017-2019?  
 * Is the average away team scoring different in 2020 than it was over 2017-2019?  
@@ -364,7 +365,8 @@ rownine <- c(as.numeric(nine$estimate[1]), as.numeric(nine$estimate[2]),
              nine$conf.int,  sqrt(as.numeric(nine$statistic)), nine$p.value)
 
 titles <- c(2020, "2017-19", "95% CI Low", "95% CI Up", "Test Statistic", "P-value")
-rows <- c("Home Team Win %", "Home Team Scoring", "Away Team Scoring", "Home Team 2P%", "Home Team 3P%", "Home Team FT%", "Away Team 2P%", "Away Team  3P%", "Away Team FT%")
+rows <- c("Home Team Win %", "Home Team Scoring", "Away Team Scoring", "Home Team 2P%", "Home Team 3P%",
+          "Home Team FT%", "Away Team 2P%", "Away Team  3P%", "Away Team FT%")
 results <- data.frame(rowone, rowtwo, rowthree, rowfour, rowfive, rowsix,
                     rowseven, roweight, rownine, stringsAsFactors = FALSE)
 resultsfinal <- data.frame(t(results))
