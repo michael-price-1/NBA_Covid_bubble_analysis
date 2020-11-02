@@ -452,10 +452,10 @@ home teams may be a result of inhibiting away teams.
 At least some of that improvement from away teams came from significantly higher 
 two point efficiency. This corresponds with the conclusion from @Harris,
 where they found home teams are best suited to capitalize on advantages from two point
-shots. Normally, by shooting more 2 themselves and forcing away teams to shoot more 2
-they home team benefits from increasing home-court advantage. However, with away teams
-significantly improving two point shooting in the bubble this strategy was no longer 
-viable and home-court advantage disappeared.
+shots. Normally, by shooting more two pointers themselves and forcing away teams to 
+shoot more two pointers the home team benefits from increasing effects of home-court advantage. 
+However, with away teams significantly improving two point shooting in the bubble this strategy 
+was no longer viable and home-court advantage disappeared.
 
 Future studies may want to use the 2020 NBA bubble and compare vs previous years
 using other performance measures. For example, turnovers, steals, assist, rebounds,
