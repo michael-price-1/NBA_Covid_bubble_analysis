@@ -12,10 +12,13 @@ author: |
 date: "`r format(Sys.time(), '%d, %B, %Y')`"
 documentclass: article
 papersize: letter
-fontsize: 12pt
+fontsize: 11pt
 bibliography: citations.bib
 biblio-style: asa
-output: pdf_document
+output: bookdown::pdf_document2
+header-includes:
+   - \usepackage{float}
+toc: False
 ---
 Abstract: 
 The 2020 NBA playoffs were played inside of a bubble in Disney World because of
@@ -36,9 +39,9 @@ with two point shooting and total scoring.
 
 ```{r setup, echo = FALSE, message =  FALSE, warning = FALSE}
 library(BSDA)
-
-knitr::opts_chunk$set(fig.width = 5, fig.height = 4, dpi = 300,
-out.width = "90%", fig.align = "center")
+library(ggplot2)
+knitr::opts_chunk$set(fig.width = 4, fig.height = 3, dpi = 300,
+out.width = "90%", fig.align = "center", dev = "pdf", fig.pos = "H")
 ```
 \newpage
 # I. Introduction  
@@ -47,8 +50,8 @@ factor to the outcome of games. It is well-known that the home team typically
 benefits from some competitive edge from playing at their home-court, resulting
 in a better chance of winning. Thus, the NBA playing the 2020 playoffs in a 
 bubble brought a great deal of concern for fans, teams, journalists, and others. 
-Steve Aschburner [@Aschburner] discusses details about anticipated effects in 
-his article “How Orlando's Neutral Site Will Impact Teams, Referees and Games”. 
+Steve Aschburner discusses details about anticipated effects in his article 
+“How Orlando's Neutral Site Will Impact Teams, Referees and Games” @Aschburner. 
 Aschburner shares concerns from former players, coaches and other experts about
 the potential effects of removing home-court advantage. Aschburner notes that the
 NBA did make attempts to recreate the effects by putting the "home” team logo on
@@ -98,56 +101,36 @@ understanding of how home-court advantage is impacting games by altering the per
 of the home and away teams.
 
 # II. Literature Review  
-There is tons of published literature on the effects of home-court advantage. 
-[@Kotecki] studies the impact of home-court advantage on winning in the NBA. 
-Kotecki proves the existence of home-court advantage using performance-based
+There is tons of published literature on the effects of home-court advantage.
+Many of which mainly focus on the effects of home-court advantage using shooting
+in the NBA. @Kotecki studies the impact of home-court advantage on winning in the
+NBA. Kotecki proves the existence of home-court advantage using performance-based
 statistics, specifically field goal percentage, free throw percentage, and 
 points. All of which he proves significantly improved from home-court advantage, 
 indicating home-court helps teams play better. This conclusion comes from 
-comparing home performance vs. away performance in games. 
+comparing home performance vs. away performance in games. @Cao studied the effects
+of pressure on performance in the NBA. They use free throws as their measure of 
+interest, and research home and away factors in the study. They expected that home
+fans could distract and put pressure on opposing players to make free throws,
+which would negatively impact away team shooting. Likewise, the home team
+would see a positive effect on free throw shooting. However, they find insignificant
+evidence that home status has a substantial impact on missing from the free throw 
+line. @Harris use two point shots, three-point shots and free throws as measures
+of interest to study home-court advantage. They find that two point shots are
+the strongest predictor of home-court advantage. They suggest that evidence 
+supports that home teams should try to shoot more two point shots and force
+their opponent to take more two point shot attempts. This strategy will maximize
+the benefits of home-court advantage and give them the best chance to win.
 
-[@Carron1992] cite 4 main game location factors for home and away teams.
-First, the crowd factor, which is the impact of fans cheering. Second, learning
-factors, which they categorize as the advantage from home teams from playing at
-a familiar venue. Third, travel factors, the idea that away teams may face 
-fatigue and jet lag from traveling. Last, rule factors, which says that home teams
-may benefit from some advantages in rules and officiating. They acknowledge that
-these factors would all be removed if games were played at a neutral site even 
-if one team was designated as “home team”. This study was reviewed a decade later
-by [@Carron2005]. The 2005 review goes over the new findings from studies 
-about the significance of these 4 game location factors. Since 1992 they found 
-that results on these 4 factors are mixed. However, there is some evidence 
-supporting crowd and travel factors impact games in the NBA. There is less 
-evidence suggesting learning and rule factors impact the NBA. One interesting 
-finding cited by [@Carron2005] is that in the absence of crowds result 
-in overall performance increases. 
-
-[@Cao] study the effects of pressure on performance in the NBA. They use free
-throws as their measure of interest, and research home and away factors in the
-study. They expected that home fans could distract and put pressure on opposing
-players to make free throws, which would negatively impact away team shooting. 
-Likewise, the home team would see a positive effect on free throw shooting. 
-However, they find insignificant evidence that home status has a substantial 
-impact on missing from the free throw line.
-
-[@Greer] focuses his study on the influence of spectator booing on home-court
-advantage in basketball. The three methods of performance used in this study 
-were scoring, violations and turnovers. This study was conducted using the men’s
-basketball programs at two large universities. The study finds that social 
-support, like booing, is an important contributor to home-court advantage. Greer
-explains, whether the influence is greater on visiting team performance or
+Some studies focus less on shooting and more on scoring differences and other metrics.
+For example, @Greer focuses his study on the influence of spectator booing on 
+Home-court advantage in basketball. The three methods of performance used
+in this study were scoring, violations and turnovers. This study was conducted 
+using the men’s basketball programs at two large universities. The study finds that
+social support, like booing, is an important contributor to home-court advantage. 
+Greer explains, whether the influence is greater on visiting team performance or
 referee calls is less clear. However, the data does seem to lean slightly in
-favor of affecting visiting team performance.
-
-[@Harris] use two point shots, three-point shots and free throws as measures of
-interest to study home-court advantage. They find that two point shots are the
-strongest predictor of home-court advantage. They suggest that evidence supports
-that home teams should try to shoot more two point shots and force their opponent
-to take more two point shot attempts. This strategy will maximize the benefits
-of home-court advantage and give them the best chance to win.
-
-College basketball, as noted before, does offer some opportunity to study 
-home-court  vs. neutral court. One study conducted by [@Harville] studied the
+favor of affecting visiting team performance. One study conducted by @Harville studied the
 effect of home-court advantage using the 1991-1992 college basketball season. 
 Unlike the NBA, it is not uncommon to have a few games played at neutral sites
 during the college basketball season. This allowed them to construct two samples,
@@ -156,6 +139,24 @@ regression equation predicting the expected difference in score for home teams.
 They set up their study to find if the home teams won games by more points when 
 they had home-court advantage vs. when playing at neutral court. This study 
 succeeds in proving that home-court advantage exists.
+
+There are also studies focused on the factors contributing to home-court advantage. 
+@Carron1992 cite 4 main game location factors for home and away teams.
+First, the crowd factor, which is the impact of fans cheering. Second, learning
+factors, which they categorize as the advantage from home teams from playing at
+a familiar venue. Third, travel factors, the idea that away teams may face 
+fatigue and jet lag from traveling. Last, rule factors, which says that home teams
+may benefit from some advantages in rules and officiating. They acknowledge that
+these factors would all be removed if games were played at a neutral site even 
+if one team was designated as “home team”. This study was reviewed a decade later
+by @Carron2005. The 2005 review goes over the new findings from studies 
+about the significance of these 4 game location factors. Since 1992 they found 
+that results on these 4 factors are mixed. However, there is some evidence 
+supporting crowd and travel factors impact games in the NBA. There is less 
+evidence suggesting learning and rule factors impact the NBA. One interesting 
+finding cited by @Carron2005 is that in the absence of crowds result 
+in overall performance increases. 
+
 
 ```{r data, include=FALSE}
 #Data Collection
@@ -166,10 +167,18 @@ game_log_2017_2019 <- read.csv(file="2017-2019_game_data.csv", header=TRUE)
 game_log_2020$W.L <- ifelse(game_log_2020$W.L=="W", 1, 0)
 game_log_2017_2019$W.L <- ifelse(game_log_2017_2019$W.L=="W", 1, 0)
 
-game_log_2020_home <- game_log_2020[game_log_2020$Home.Away=="FALSE",]
-game_log_2020_away <- game_log_2020[game_log_2020$Home.Away=="TRUE",]
-game_log_2017_2019_home <- game_log_2017_2019[game_log_2017_2019$Home.Away=="FALSE", ]
-game_log_2017_2019_away <- game_log_2017_2019[game_log_2017_2019$Home.Away=="TRUE", ]
+game_log_2020$Home.Away <- ifelse(game_log_2020$Home.Away == FALSE, "Home", "Away")
+game_log_2017_2019$Home.Away <- ifelse(game_log_2017_2019$Home.Away == FALSE, "Home", "Away")
+
+game_log_2020_home <- game_log_2020[game_log_2020$Home.Away=="Home",]
+game_log_2020_away <- game_log_2020[game_log_2020$Home.Away=="Away",]
+game_log_2017_2019_home <- game_log_2017_2019[game_log_2017_2019$Home.Away=="Home", ]
+game_log_2017_2019_away <- game_log_2017_2019[game_log_2017_2019$Home.Away=="Away", ]
+
+#combineddata
+combined <- rbind(game_log_2020, game_log_2017_2019)
+combined$Year <- as.factor(combined$Year)
+combined <-  na.omit(combined)
 
 years <- 2010:2020
 winpct <- c(.6707, .667, .679, .635, .562, .593, .6744, .5696, .707, .561, .482)
@@ -182,7 +191,7 @@ exhibition/preseason games, the NBA always has a home and away team. So, for
 the first time in NBA history the bubble allows NBA home and away performance
 to be compared vs a control/neutral field. The NBA bubble, as a neutral court,
 removed all 4 possible game location factors impacting home-court advantage 
-hypothesized by [@Carron2005]. The NBA bubble featured 8 seeding games then a
+hypothesized by @Carron1992. The NBA bubble featured 8 seeding games then a
 standard playoff format. The focus of this study was the play during the playoff
 games since it followed the standard playoff format and can easily be compared
 back to other playoffs. For this study, the 2020 playoffs were compared against
@@ -209,13 +218,14 @@ efficiency are important to understand.
 Home-court advantage is the basic idea that the home team is more likely to win.
 So laying a foundation of typical home-court advantage is crucial. Before 
 focusing on the 2017 to 2020 playoffs we can take a quick look at home team win
-percentages since 2010. Notice in Figure 1, the10 years before 2020, the home team
+percentages since 2010. Notice in Figure \@ref(fig:Fig1), the10 years before 2020, the home team
 winning percentage ranged from around 0.56 to 0.7 and never dipped below .5. The 
 2020 bubble, however, broke this historicpattern dipping down below .5. Foreshadowing, 
 the confirmation of the expectationthat the effect of home-court advantage was removed
 in the 2020 playoffs.
 
-```{r Fig1, echo=FALSE, fig.cap = "Winning percentage of NBA home teams in the playoffs since 2010, the green line denotes .500. ", fig.align='center'}
+(ref:cap-Fig1) "Winning percentage of NBA home teams in the playoffs since 2010, the green line denotes .500"
+```{r Fig1, echo=FALSE, fig.cap = " (ref:cap-Fig1)", fig.align='center'}
 plot(years, winpct, ylim = c(0,1), title("NBA Home Playoff Win % Since 2010"), col = ifelse(winpct==.482, "Red", "Black"), pch=16)
 text(years, winpct, labels = winpct, cex = 0.5, pos = 1)
 text(2010, 0.51, labels = "0.5", cex = 0.6, col = "Green")
@@ -223,84 +233,70 @@ abline(h=0.5, col = "Green")
 ```
    
 Moving on to the main focus of the study, comparing 2020 to 2017-2019. First, 
-a brief look at the distribution of scoring depicted in Figure 2.
+a brief look at the distribution of scoring depicted in Figure \@ref(fig:Fig2).
 The green histograms indicate home and red histograms indicate away scoring. The
 top row is scoring for 2020 and the bottom is scoring for 2017-2019. All histograms
 seem to be fairly normally distributed which is important for statistical analysis.
 It’s hard to see any clear differences between years, but it’s important to look at
 and understand the distribution of measures before moving onto the analysis.   
 
-```{r Figtwo, echo=FALSE, fig.cap="Shows the home(green) and away (red) scoring distirbutions for 2020(top) and 2017-2019(bottom)", fig.align='center'}
-opar<-par(no.readonly = TRUE)
-par(mfrow=c(2,2))
-hist(game_log_2020_home$PTS, xlab = "Points", col = "green",
-     xlim = c(60, 160), main = "Home 2020")
-
-hist(game_log_2020_away$PTS,  xlab = "Points", col = "red",
-     xlim = c(60, 160), main = "Away 2020")
-
-hist(game_log_2017_2019_home$PTS, xlab = "Points", col="green",
-     xlim = c(60, 160), main = "Home 2017-2019" )
-
-hist(game_log_2017_2019_away$PTS, xlab = "Points", col = "red",
-     xlim = c(60, 160), main = "Home 2017-2019", breaks = 8 )
-
-par(opar)
+(ref:cap-Fig2) Shows the home(blue) and away (red) scoring distirbutions for 2020(bottom) and 2017-2019(top)"
+```{r Fig2, echo=FALSE, fig.cap="(ref:cap-Fig2)", fig.align='center'}
+ggplot(combined) + 
+  geom_histogram(aes(x = PTS, y = ..density.., fill = Home.Away), bins = 10, binwidth = 5)+
+  facet_grid(Year ~ Home.Away)
 ```
    
-Figure 3 shows home shooting for two pointers, three pointers and
+Figure \@ref(fig:Fig3) shows home shooting for two pointers, three pointers and
 free throws for 2020(top) vs. 2017-19(bottom). The histograms appear to be fairly
-similarly distributed between 2020 and 2017-19. Likewise, Figure 4, shows the same
-data except for away teams. Just like Figure 3, Figure 4 histograms don’t show any
-obvious differences. The normality of the distributions for both figures 3 and 4
-are important for meeting the required assumptions for statistical analysis.
+similarly distributed between 2020 and 2017-19. Likewise, Figure \@ref(fig:Fig4),
+shows the same data except for away teams. Just like Figure \@ref(fig:Fig3),
+Figure \@ref(fig:Fig4) histograms don’t show anyobvious differences. The normality
+of the distributions in both Figure \@ref(fig:Fig3) and Figure \@ref(fig:Fig4) are
+important for meeting the required assumptions for statistical analysis.
 
-```{r Figthree, echo=FALSE, fig.cap="Home shooting percentages for two pointers, three pointers and free throws for 2020(top) vs. 2017-19 (bottom)"}
-opar<-par(no.readonly = TRUE)
-par(mfrow=c(2,3))
-
-hist(game_log_2020_home$X2P., xlab = "Shooting Percentage", col= "green",
-     main = "2020 Home 2 pointers", xlim = c(20, 70))
-
-hist(game_log_2020_home$X3P., xlab = "Shooting Percentage", col= "green",
-     main = "2020 Home 3 pointers", xlim = c(10, 70))
-
-hist(game_log_2020_home$FT., xlab = "Shooting Percentage", col= "green",
-     main = "2020 Home Free Throws", xlim = c( 50, 100))
-
-hist(game_log_2017_2019_home$X2P., xlab = "Shooting Percentage", col= "green",
-     main = "2017-2019 2 pointers", xlim = c(20, 70))
-
-hist(game_log_2017_2019_home$X3P., xlab = "Shooting Percentage", col= "green",
-     main = "2017-2019 3 pointers", xlim = c(10, 70))
-
-hist(game_log_2017_2019_home$FT., xlab = "Shooting Percentage", col= "green",
-     main = "2017-2019 Free Throws", xlim = c( 50, 100))
-
-par(opar)
+(ref:cap-Fig3) Home shooting percentages for two pointers, three pointers and free throws for 2020(top) vs. 2017-19 (bottom)
+```{r Fig3, echo=FALSE, fig.cap="(ref:cap-Fig3)"}
+hometwo2020 <- data.frame(Year=game_log_2020_home$Year, Type=rep("Two Pointers", 83),
+                          Percentage=game_log_2020_home$X2P.) 
+homethree2020 <- data.frame(Year=game_log_2020_home$Year, Type=rep("Three Pointers", 83),
+                            Percentage=game_log_2020_home$X3P.) 
+homeFT2020 <- data.frame(Year=game_log_2020_home$Year, Type=rep("Free Throws", 83),
+                         Percentage=game_log_2020_home$FT.) 
+hometwo2017_2019 <- data.frame(Year=game_log_2017_2019_home$Year, Type=rep("Two Pointers", 243),
+                               Percentage=game_log_2017_2019_home$X2P.) 
+homethree2017_2019 <- data.frame(Year=game_log_2017_2019_home$Year, Type=rep("Three Pointers", 243),
+                                 Percentage=game_log_2017_2019_home$X3P.) 
+homeFT2017_2019 <- data.frame(Year=game_log_2017_2019_home$Year, Type=rep("Free Throws", 243),
+                              Percentage=game_log_2017_2019_home$FT.) 
+homegraph<-rbind(hometwo2020, homethree2020, homeFT2020, hometwo2017_2019, homethree2017_2019,
+                 homeFT2017_2019)
+                 
+ggplot(homegraph) + 
+  geom_histogram(aes(x = Percentage, y = ..density..), fill = "#00BFC4", bins = 10, binwidth = 5)+
+  facet_grid(Year ~ Type)
 ```
   
-```{r Fig4, echo=FALSE, fig.cap="Away shooting percentages for two pointers, three pointers and free throws for 2020(top) vs. 2017-19 (bottom)", fig.align='center'}
-opar<-par(no.readonly = TRUE)
-par(mfrow=c(2,3))
-hist(game_log_2020_away$X2P., xlab = "Shooting Percentage", col= "red", 
-     main = "2020 Away 2 pointers", xlim= c(30, 80))
-
-hist(game_log_2020_away$X3P., xlab = "Shooting Percentage", col= "red", 
-     main = "2020 Away 3 pointers", xlim = c(10, 60))
-
-hist(game_log_2020_away$FT., xlab = "Shooting Percentage", col= "red", 
-     main = "2020 Away Free Throws", xlim = c(40, 100))
-
-hist(game_log_2017_2019_away$X2P., xlab = "Shooting Percentage", col= "red",
-     main = "2017-19 Away 2 pointers", xlim= c(30, 80))
-
-hist(game_log_2017_2019_away$X3P., xlab = "Shooting Percentage", col= "red",
-     main = "2017-19 Away 3 pointers", xlim = c(10, 60))
-
-hist(game_log_2017_2019_away$FT., xlab = "Shooting Percentage", col= "red",
-     main = "2017-19 Away Free Throws", xlim = c(40, 100))
-par(opar)
+(ref:cap-Fig4) Away shooting percentages for two pointers, three pointers and free throws for 2020(top) vs. 2017-19 (bottom)"
+```{r Fig4, echo=FALSE, fig.cap="(ref:cap-Fig4)", fig.align='center'}
+hometwo2020 <- data.frame(Year=game_log_2020_home$Year, Type=rep("Two Pointers", 83),
+                          Percentage=game_log_2020_home$X2P.) 
+homethree2020 <- data.frame(Year=game_log_2020_home$Year, Type=rep("Three Pointers", 83),
+                            Percentage=game_log_2020_home$X3P.) 
+homeFT2020 <- data.frame(Year=game_log_2020_home$Year, Type=rep("Free Throws", 83),
+                         Percentage=game_log_2020_home$FT.) 
+hometwo2017_2019 <- data.frame(Year=game_log_2017_2019_home$Year, Type=rep("Two Pointers", 243),
+                               Percentage=game_log_2017_2019_home$X2P.) 
+homethree2017_2019 <- data.frame(Year=game_log_2017_2019_home$Year, Type=rep("Three Pointers", 243),
+                                 Percentage=game_log_2017_2019_home$X3P.) 
+homeFT2017_2019 <- data.frame(Year=game_log_2017_2019_home$Year, Type=rep("Free Throws", 243),
+                              Percentage=game_log_2017_2019_home$FT.) 
+homegraph<-rbind(hometwo2020, homethree2020, homeFT2020, hometwo2017_2019, homethree2017_2019,
+                 homeFT2017_2019)
+                 
+ggplot(homegraph) + 
+  geom_histogram(aes(x = Percentage, y = ..density..), fill = "#00BFC4", bins = 10, binwidth = 5)+
+  facet_grid(Year ~ Type)
 ```
   
   Given the approximate normality of data, 9 different z-tests were performed in 
@@ -364,22 +360,23 @@ rownine <- c(as.numeric(nine$estimate[1]), as.numeric(nine$estimate[2]),
              nine$conf.int,  sqrt(as.numeric(nine$statistic)), nine$p.value)
 
 titles <- c(2020, "2017-19", "95% CI LL", "95% CI UL", "Test Stat.", "P-value")
-rows <- c("Home Team Win %", "Home Team Scoring", "Away Team Scoring", "Home Team 2P%", "Home Team 3P%",
-          "Home Team FT%", "Away Team 2P%", "Away Team  3P%", "Away Team FT%")
+rows <- c("Home Win %", "Home Scoring", "Away Scoring", "Home 2P%", "Home 3P%",
+          "Home FT%", "Away 2P%", "Away 3P%", "Away FT%")
 results <- data.frame(rowone, rowtwo, rowthree, rowfour, rowfive, rowsix,
                     rowseven, roweight, rownine, stringsAsFactors = FALSE)
 resultsfinal <- data.frame(t(results))
-resultsfinal <- round(resultsfinal, 4)
+resultsfinal1 <- round(resultsfinal[1:5], 3)
+resultsfinal2 <- round(resultsfinal[6], 4)
+resultsfinal <-cbind(resultsfinal1, resultsfinal2)
 colnames(resultsfinal) <- titles
 row.names(resultsfinal) <- rows
-
 ```
 
 ```{r table, echo = FALSE}
 knitr::kable(resultsfinal, caption = 'The results from the 9 statistical tests', align = "cccccc")
 ```
 
-Starting from the top of the Table 1, we see a statistically significant change
+Starting from the top of the Table \@ref(tab:table), we see a statistically significant change
 in home win percentage in 2020 from 2017-19, with p-value of 0.0365. The 95% 
 confidence interval of (-0.255, -0.0075) confirms our belief that home-court 
 advantage was lost in the 2020 NBA playoffs. However, after accounting for 
@@ -408,7 +405,7 @@ than previous years on the road. Starting from the dip in home winning percentag
 to below .482 it’s clear something was different. Although the difference was not
 significant after a Bonferroni correction it’s still important to consider and
 understand that home teams seemed to struggle to win compared to normal conditions.
-Compared to [@Kotecki]who finds home teams consistently have a significantly
+Compared to @Kotecki who finds home teams consistently have a significantly
 better record than away teams boasting about a 60.5% win percentage in his sample,
 the 48.2% home winning percentage of 2020 home teams is a shift from normal.
 It’s clear that home teams did not benefit from the usual advantages provided by
@@ -428,7 +425,7 @@ effects on the visiting team.
 
 An interesting finding is all shooting and scoring numbers for both home and
 away teams did make at least small increases. Although these increases weren’t
-all significant these increases are exactly what is reported in [@Carron2005]
+all significant these increases are exactly what is reported in @Carron2005
 when they explain how evidence suggests that teams perform better with the absence
 of fans. This is important because it coincides with our conclusion that home-court
 advantage mostly plays into games by negatively impacting away teams. If fans cause
@@ -449,11 +446,11 @@ than the typical average. This was because of the improvement of away teams.
 No longer having to face the struggle of traveling, pressure from opposing fans,
 or playing on an unfamiliar court, teams saw an improvement in their play and an
 increase in winning. The improvement of away teams confirms a proposition from 
-[@Greer)] who believed that the positive social impact of crowds benefiting 
+@Greer who believed that the positive social impact of crowds benefiting 
 home teams may be a result of inhibiting away teams. 
 
 At least some of that improvement from away teams came from significantly higher 
-two point efficiency. This corresponds with the conclusion from [@Harris],
+two point efficiency. This corresponds with the conclusion from @Harris,
 where they found home teams are best suited to capitalize on advantages from two point
 shots. Normally, by shooting more 2 themselves and forcing away teams to shoot more 2
 they home team benefits from increasing home-court advantage. However, with away teams
