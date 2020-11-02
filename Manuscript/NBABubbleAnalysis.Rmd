@@ -279,23 +279,23 @@ ggplot(homegraph) +
   
 (ref:cap-Fig4) Away shooting percentages for two pointers, three pointers and free throws for 2020(top) vs. 2017-19 (bottom)"
 ```{r Fig4, echo=FALSE, fig.cap="(ref:cap-Fig4)", fig.align='center'}
-hometwo2020 <- data.frame(Year=game_log_2020_home$Year, Type=rep("Two Pointers", 83),
-                          Percentage=game_log_2020_home$X2P.) 
-homethree2020 <- data.frame(Year=game_log_2020_home$Year, Type=rep("Three Pointers", 83),
-                            Percentage=game_log_2020_home$X3P.) 
-homeFT2020 <- data.frame(Year=game_log_2020_home$Year, Type=rep("Free Throws", 83),
-                         Percentage=game_log_2020_home$FT.) 
-hometwo2017_2019 <- data.frame(Year=game_log_2017_2019_home$Year, Type=rep("Two Pointers", 243),
-                               Percentage=game_log_2017_2019_home$X2P.) 
-homethree2017_2019 <- data.frame(Year=game_log_2017_2019_home$Year, Type=rep("Three Pointers", 243),
-                                 Percentage=game_log_2017_2019_home$X3P.) 
-homeFT2017_2019 <- data.frame(Year=game_log_2017_2019_home$Year, Type=rep("Free Throws", 243),
-                              Percentage=game_log_2017_2019_home$FT.) 
-homegraph<-rbind(hometwo2020, homethree2020, homeFT2020, hometwo2017_2019, homethree2017_2019,
-                 homeFT2017_2019)
+awaytwo2020 <- data.frame(Year=game_log_2020_away$Year, Type=rep("Two Pointers", 83),
+                          Percentage=game_log_2020_away$X2P.) 
+awaythree2020 <- data.frame(Year=game_log_2020_away$Year, Type=rep("Three Pointers", 83),
+                            Percentage=game_log_2020_away$X3P.) 
+awayFT2020 <- data.frame(Year=game_log_2020_away$Year, Type=rep("Free Throws", 83),
+                         Percentage=game_log_2020_away$FT.) 
+awaytwo2017_2019 <- data.frame(Year=game_log_2017_2019_away$Year, Type=rep("Two Pointers", 243),
+                               Percentage=game_log_2017_2019_away$X2P.) 
+awaythree2017_2019 <- data.frame(Year=game_log_2017_2019_away$Year, Type=rep("Three Pointers", 243),
+                                 Percentage=game_log_2017_2019_away$X3P.) 
+awayFT2017_2019 <- data.frame(Year=game_log_2017_2019_away$Year, Type=rep("Free Throws", 243),
+                              Percentage=game_log_2017_2019_away$FT.) 
+awaygraph<-rbind(awaytwo2020, awaythree2020, awayFT2020, awaytwo2017_2019, awaythree2017_2019,
+                 awayFT2017_2019)
                  
-ggplot(homegraph) + 
-  geom_histogram(aes(x = Percentage, y = ..density..), fill = "#00BFC4", bins = 10, binwidth = 5)+
+ggplot(awaygraph) + 
+  geom_histogram(aes(x = Percentage, y = ..density..), fill = "#F8766D", bins = 10, binwidth = 5)+
   facet_grid(Year ~ Type)
 ```
   
