@@ -378,7 +378,7 @@ knitr::kable(resultsfinal, caption = 'The results from the 9 statistical tests',
 
 Starting from the top of the Table \@ref(tab:table), we see a statistically significant change
 in home win percentage in 2020 from 2017-19, with p-value of 0.0365. The 95% 
-confidence interval of (-0.255, -0.0075) confirms our belief that home-court 
+confidence interval of (-0.255, -0.008) confirms our belief that home-court 
 advantage was lost in the 2020 NBA playoffs. However, after accounting for 
 multiple tests using Bonferroni correction the p-value is no longer significant.
 So, we may only cautiously say there is evidence that home-court advantage was 
@@ -393,7 +393,7 @@ a lower level in 2020 than they did in previous years when they had home-court a
 Away teams saw more of an impact than home teams. For starters, they saw a 
 significant increase in mean points per game by about 5 points (95% CI: 2.083, 7.988)
 Likewise, the away team two point shooting efficiency increased by an average of
-about 0.03 (95% CI: 0.0147, 0.0503). However, unlike two point shooting, away 
+about 0.03 (95% CI: 0.015, 0.050). However, unlike two point shooting, away 
 teams did not see a statistically significant difference in three point and free
 throw shooting. Overall, away teams have evidence of change in performance in 
 the bubble. The away teams seemed to perform better than they would under normal
