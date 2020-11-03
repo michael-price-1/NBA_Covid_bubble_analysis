@@ -321,12 +321,12 @@ rowone <- c(as.numeric(one$estimate[1]), as.numeric(one$estimate[2]), one$conf.i
 
 two <- z.test(x=game_log_2020_home$PTS, y=game_log_2017_2019_home$PTS, sigma.x = 
                 sd(game_log_2020_home$PTS), sigma.y = sd(game_log_2017_2019_home$PTS))
-rowtwo <- c(as.numeric(two$estimate[1]), as.numeric(two$estimate[2]), 
+rowtwo <- c(as.numeric(two$estimate[1])/100, as.numeric(two$estimate[2])/100, 
             two$conf.int, two$statistic, two$p.value)
 
 three <- z.test(x=game_log_2020_away$PTS, y=game_log_2017_2019_away$PTS, sigma.x = 
                   sd(game_log_2020_away$PTS), sigma.y = sd(game_log_2017_2019_away$PTS))
-rowthree <- c(as.numeric(three$estimate[1]), as.numeric(three$estimate[2]), 
+rowthree <- c(as.numeric(three$estimate[1])/100, as.numeric(three$estimate[2])/100, 
               three$conf.int, three$statistic, three$p.value)
 
 four <- prop.test(x=c(sum(game_log_2020_home$X2PM), sum(game_log_2017_2019_home$X2PM)), 
