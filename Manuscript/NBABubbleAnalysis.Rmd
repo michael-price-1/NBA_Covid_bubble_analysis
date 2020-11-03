@@ -467,11 +467,10 @@ performance of away teams when they travel to opposing arenas. This study is onl
 the beginning of possibilities for studies using the 2020 NBA bubble as a case study 
 for home-court advantage.
 
-Unfortunately, this study is limited by a one time sample. It is unknown if there
-will ever be another NBA playoffs played in this fashion. It seems unlikely that 
-these conditions will ever be repeated. That being said, it does not seem like a 
-follow-up study using the same measures with a different sample will ever be
-possible. If possible, that type of study could help strengthen the conclusions
+Unfortunately, this study is limited by a one time sample. It seems unlikely that 
+these conditions will ever be repeated. That being said, it will not be possible
+to have a follow-up study using the same measures with a different sample. If
+possible, that type of study could help strengthen the conclusions
 made in this paper.
 
 #References
