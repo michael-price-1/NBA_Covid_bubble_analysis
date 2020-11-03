@@ -102,8 +102,8 @@ of the home and away teams.
 
 # II. Literature Review  
 There is tons of published literature on the effects of home-court advantage.
-Many of which mainly focus on the effects of home-court advantage using shooting
-in the NBA. @Kotecki studies the impact of home-court advantage on winning in the
+Many NBA home-court advantage studies analyze the effects by studying shooting
+percentages. @Kotecki examines the impact of home-court advantage on winning in the
 NBA. Kotecki proves the existence of home-court advantage using performance-based
 statistics, specifically field goal percentage, free throw percentage, and 
 points. All of which he proves significantly improved from home-court advantage, 
