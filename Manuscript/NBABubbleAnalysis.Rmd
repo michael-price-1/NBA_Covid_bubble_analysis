@@ -1,3 +1,4 @@
+
 ---
 title: "Analyzing the Effects of the NBA COVID Bubble on the NBA Playoffs"
 subtitle: "A Case Study for Home-Court Advantage"
@@ -18,6 +19,7 @@ biblio-style: asa
 output: bookdown::pdf_document2
 header-includes:
    - \usepackage{float}
+   - \usepackage[margin=1in]{geometry}
 toc: False
 ---
 Abstract: 
@@ -44,7 +46,7 @@ knitr::opts_chunk$set(fig.width = 4, fig.height = 3, dpi = 300,
 out.width = "90%", fig.align = "center", dev = "pdf", fig.pos = "H")
 ```
 \newpage
-# I. Introduction  
+# Introduction  
 Home-court advantage is often discussed in sports circles as a contributing 
 factor to the outcome of games. It is well-known that the home team typically
 benefits from some competitive edge from playing at their home-court, resulting
@@ -474,4 +476,4 @@ to have a follow-up study using the same measures with a different sample. If
 possible, that type of study could help strengthen the conclusions
 made in this paper.
 
-#References
+# References
