@@ -226,7 +226,8 @@ in the 2020 playoffs.
 
 (ref:cap-Fig1) "Winning percentage of NBA home teams in the playoffs since 2010, the green line denotes .500"
 ```{r Fig1, echo=FALSE, fig.cap = " (ref:cap-Fig1)", fig.align='center'}
-plot(years, winpct, ylim = c(0,1), title("NBA Home Playoff Win % Since 2010"), col = ifelse(winpct==.482, "Red", "Black"), pch=16)
+plot(years, winpct, ylim = c(0,1), title("NBA Home Playoff Win % Since 2010"),
+     col = ifelse(winpct==.482, "Red", "Black"), pch=16)
 text(years, winpct, labels = winpct, cex = 0.5, pos = 1)
 text(2010, 0.51, labels = "0.5", cex = 0.6, col = "Green")
 abline(h=0.5, col = "Green")
