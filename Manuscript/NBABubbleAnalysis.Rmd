@@ -463,7 +463,7 @@ Future studies may want to use the 2020 NBA bubble and compare vs previous years
 using other performance measures. For example, turnovers, steals, assist, rebounds,
 and many more game statistics. There are plenty of other possibilities besides
 just shooting efficiency to pick through looking for more possible sources of
-added points for away teams.This will further help explain what is lost in the
+added points for away teams. This will further help explain what is lost in the
 performance of away teams when they travel to opposing arenas. This study is only
 the beginning of possibilities for studies using the 2020 NBA bubble as a case study 
 for home-court advantage.
