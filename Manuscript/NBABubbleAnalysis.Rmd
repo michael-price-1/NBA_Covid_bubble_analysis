@@ -160,8 +160,8 @@ in overall performance increases.
 
 ```{r data, include=FALSE}
 #Data Collection
-game_log_2020 <- read.csv(file="Game_Log_2020.csv", header=TRUE)
-game_log_2017_2019 <- read.csv(file="2017-2019_game_data.csv", header=TRUE)
+game_log_2020 <- read.csv(file="../data/Game_Log_2020.csv", header=TRUE)
+game_log_2017_2019 <- read.csv(file="../data/2017-2019_game_data.csv", header=TRUE)
 
 #Data Cleaning
 game_log_2020$W.L <- ifelse(game_log_2020$W.L=="W", 1, 0)
