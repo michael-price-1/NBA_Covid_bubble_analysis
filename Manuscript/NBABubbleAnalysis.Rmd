@@ -1,15 +1,10 @@
-
 ---
-title: "Analyzing the Effects of the NBA COVID Bubble on the NBA Playoffs"
+title: "The Effects of the NBA COVID Bubble on the NBA Playoffs"
 subtitle: "A Case Study for Home-Court Advantage"
 author: |
-  | Michael Price
+  | Michael Price and Jun Yan
   | michael.price@uconn.edu
   | Department of Statistics, University of Connecticut
-  | Dr. Jun Yan
-  | jun.yan@uconn.edu
-  | Department of Statistics, University of Connecticut
-  
 date: "`r format(Sys.time(), '%d, %B, %Y')`"
 documentclass: article
 papersize: letter
@@ -25,18 +20,19 @@ toc: False
 Abstract: 
 The 2020 NBA playoffs were played inside of a bubble in Disney World because of
 the COVID-19 pandemic. This meant that there would be no fans in attendance, 
-games played on neutral courts and no traveling for teams which in theory 
-removes home-court advantage from the games. This idea was a hot topic of 
+games played on neutral courts and no traveling for teams, which in theory 
+removes home-court advantage from the games. This setting has attracted a lot of
 discussion as analysts and fans debated the possible effects it may have on the
 outcome of games. Home-court advantage has historically played a huge role in 
-NBA playoff series outcomes. Thus, to study the effects of the bubble, and 
-home-court advantage, the 2020 season is compared to the 2017, 2018, and 2019
-playoffs. While many factors contribute to the outcome of games, points scored
-is the deciding factor of who wins games so scoring will be the primary focus 
+NBA playoff series outcomes. The 2020 playoff provided a unique
+opportunituy to study the effects of the bubble, and home-court
+advantage by comparing the 2020 season with the seasons in the past
+While many factors contribute to the outcome of games, points scored
+is the deciding factor of who wins games so scoring is the primary focus 
 of this study. The specific measures of interest are team scoring totals and 
 team shooting percentage on two pointers, three pointers, and free throws. 
 Comparing these measures for home teams and away teams in 2020 vs. 2017-2019
-shows how the 2020 playoffs favored away teams more than normal, particularly
+shows that the 2020 playoffs favored away teams more than normal, particularly
 with two point shooting and total scoring.
 
 ```{r setup, echo = FALSE, message =  FALSE, warning = FALSE}
@@ -45,7 +41,8 @@ library(ggplot2)
 knitr::opts_chunk$set(fig.width = 4, fig.height = 3, dpi = 300,
 out.width = "90%", fig.align = "center", dev = "pdf", fig.pos = "H")
 ```
-\newpage
+
+
 # Introduction  
 Home-court advantage is often discussed in sports circles as a contributing 
 factor to the outcome of games. It is well-known that the home team typically
