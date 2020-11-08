@@ -179,7 +179,7 @@ combined$Year <- as.factor(combined$Year)
 combined <-  na.omit(combined)
 
 years <- 2010:2020
-winpct <- c(.6707, .667, .679, .635, .562, .593, .6744, .5696, .707, .561, .482)
+winpct <- c(.671, .667, .679, .635, .562, .593, .674, .570, .707, .561, .482)
 ```
 
 # Data {#sec:data}
@@ -215,7 +215,7 @@ ggplot(winyear, aes(x=years, y=winpct))+
       scale_x_continuous(name = "Year", breaks = years, labels = years)+
       scale_y_continuous(limits = c(0.4, 0.8))+
       geom_hline(aes(yintercept = 0.5), color = "green")+
-      geom_text(aes(label=winpct), hjust=0, vjust=-1)
+      geom_text(aes(label=winpct), hjust=0, vjust=-1, size=2)
 ```
    
 Moving on to the main focus of the study, comparing 2020 to 2017-2019. First, 
