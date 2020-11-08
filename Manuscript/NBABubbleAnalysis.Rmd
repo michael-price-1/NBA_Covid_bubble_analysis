@@ -183,26 +183,6 @@ winpct <- c(.6707, .667, .679, .635, .562, .593, .6744, .5696, .707, .561, .482)
 ```
 
 # Data {#sec:data}
-The 2020 bubble provides a new and exciting opportunity to study home-court
-advantage for the NBA. Unlike college basketball, aside from a few 
-exhibition/preseason games, the NBA always has a home and away team. So, for
-the first time in NBA history the bubble allows NBA home and away performance
-to be compared vs a control/neutral field. The NBA bubble, as a neutral court,
-removed all 4 possible game location factors impacting home-court advantage 
-hypothesized by @Carron1992. The NBA bubble featured 8 seeding games then a
-standard playoff format. The focus of this study was the play during the playoff
-games since it followed the standard playoff format and can easily be compared
-back to other playoffs. For this study, the 2020 playoffs were compared against
-the three previous playoffs collectively. It is important to make sure that any
-observed differences are truly from a home-court advantage. So, in order to control
-for the changing play style of the NBA, we will limit the study to 2020 vs 2017-2019.
-The reason being the faster pace play and more common use of the three-point shot 
-in modern basketball. If we used data from say 10 years ago, or earlier, observed
-differences may not be from effects of the NBA bubble, but rather from the effects
-of drastic changes in the style of play between the seasons. However, basketball
-evolves slow enough that we can reasonably assume 2017-2019 are at least very 
-close in pace and playing style to 2020. 
-
 Data was collected from the official NBA website. The main variables of interest
 are whether or not the home team won, scoring totals for home and away teams, and
 shooting percentages for home and away teams on two pointers, three pointers, and
@@ -318,6 +298,42 @@ ggplot(awaygraph) +
 * Are away teams making free throws at the same rate in 2020 as 2017-2019?  
 
 # Methods {#sec:methods}
+The 2020 bubble provides a new and exciting opportunity to study home-court
+advantage for the NBA. Unlike college basketball, aside from a few 
+exhibition/preseason games, the NBA always has a home and away team. So, for
+the first time in NBA history the bubble allows NBA home and away performance
+to be compared vs a control/neutral field. The NBA bubble, as a neutral court,
+removed all 4 possible game location factors impacting home-court advantage 
+hypothesized by @Carron1992. The NBA bubble featured 8 seeding games then a
+standard playoff format. The focus of this study was the play during the playoff
+games since it followed the standard playoff format and can easily be compared
+back to other playoffs. For this study, the 2020 playoffs were compared against
+the three previous playoffs collectively. It is important to make sure that any
+observed differences are truly from a home-court advantage. So, in order to control
+for the changing play style of the NBA, we will limit the study to 2020 vs 2017-2019.
+The reason being the faster pace play and more common use of the three-point shot 
+in modern basketball. If we used data from say 10 years ago, or earlier, observed
+differences may not be from effects of the NBA bubble, but rather from the effects
+of drastic changes in the style of play between the seasons. However, basketball
+evolves slow enough that we can reasonably assume 2017-2019 are at least very 
+close in pace and playing style to 2020. 
+
+Comparisons between 2020 and 2017-19 home and away teams were made on home team
+winning percentage, total team scoring and two-point, three-point and free throw
+shooting. Comparing the differences in these metrics for home and away teams in
+2020 vs previous years will provide valuable insights to the understanding of 
+home-court advantage. We can see how going on the road may negatively impact 
+away performance and how playing at home may positively impact home performance.
+If there are differences in scoring for home or away teams the differences can
+be used to show how home-court advantage affects overall performance of home
+and away teams. While testing for differences in shooting will provide added
+context for how home-court advantage specifically affects performance. 
+Shooting percentages aren’t the only possible metrics affected by home-court
+advantage, but they are the most obvious and certainly an important one. In
+order to compare these differences simple two-sample z-tests were conducted.
+Test for differences in means was conducted for comparing scoring totals. 
+Tests for differences in proportions were conducted for comparing winning
+percentage and the three different shooting percentages.
 
 # Analysis and Results {#sec:results}
 ```{r, echo=FALSE}
