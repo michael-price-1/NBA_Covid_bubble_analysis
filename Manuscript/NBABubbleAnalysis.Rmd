@@ -409,7 +409,7 @@ row.names(resultsfinal) <- rows
 ```
 
 ```{r table, echo = FALSE}
-knitr::kable(resultsfinal, caption = 'The results from the 9 statistical tests', align = "cccccc")
+knitr::kable(resultsfinal, caption = 'The results from the 9 statistical tests', align = "cccccc", booktabs = TRUE)
 ```
 
 Starting from the top of the Table \@ref(tab:table), we see a statistically significant change
