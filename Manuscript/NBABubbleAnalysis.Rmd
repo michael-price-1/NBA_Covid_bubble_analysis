@@ -334,22 +334,36 @@ context for how home-court advantage specifically affects performance.
 Shooting percentages aren’t the only possible metrics affected by home-court
 advantage, but they are the most obvious and certainly an important one. In
 order to compare these differences simple two-sample z-tests were conducted.
-Test for differences in means was conducted for comparing scoring totals, shown in 
-Equation \@ref(eq:zmean). Tests for differences in proportions were conducted for
-comparing winning percentage and the three different shooting percentages, shown
-in Equation \@ref(eq:zprop). All 9 tests are conducted under the assumption and null
-hypothesis that there should be no difference in statistics from 2020 compared
-to those from 2017-2019.
 
+A test for differences in means was conducted to compare scoring totals. Let
+$\bar{X}_1$ represent the average scoring total for 2020 and $\bar{X}_2$ represent
+average scoring total over 2017-19. Similarly, $s_1^2$ represent the sample variance
+of scoring for 2020 and $s_2^2$ represent sample variance of scoring over 2017-19.
+Finally, let $n_1$ represent the number of games in 2020 and $n_2$ represent the number
+of games from 2017-2019. Then the test statistic is constructed using Equation \@ref(eq:zmean).
 \begin{align}
     z = \frac{(\bar{X}_1 - \bar{X}_2)-0}{\sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}}}.
     (\#eq:zmean)
 \end{align}
+We will test the null hypothesis that $\mu_1$=$\mu_2$. The test will be conducted twice
+once comparing home scoring in 2020 to 2017-19 and once comparing away
+scoring in 2020 to 2017-2019.
 
+Tests for differences in proportions were conducted for comparing winning percentage
+and the three different shooting percentages in 2020 to those of 2017-2019. Let
+$\hat{p}_1$ represents sample proportion for 2020 and $\hat{p}_2$ represents sample
+proportion for 2017-2019. While, $\hat{p}$ is $\hat{p}_1$ and $\hat{p}_2$ pooled 
+together.Let $n_1$ represent number of observations for 2020 and $n_2$ represent 
+number of observations for 2017-2019. Then the test statistic is constructed using
+Equation \@ref(eq:zprop).
 \begin{align}
     z = \frac{(\hat{p}_1 - \hat{p}_2)-0}{\sqrt{\hat{p}(1-\hat{p})(\frac{1}{n_1}+\frac{1}{n_2})}}.
     (\#eq:zprop)
 \end{align}
+We will test the null hypothesis that $p_1$=$p_2$. The test will be conducted seven times,
+once comparing home winning percentage for 2020 to that of 2017-2019 and once for each of
+two-point shooting, three-point shooting and free throws for both home and away teams
+in 2020 vs. 2017-2019.
 
 # Analysis and Results {#sec:results}
 ```{r, echo=FALSE}
