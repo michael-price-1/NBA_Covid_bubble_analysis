@@ -335,7 +335,9 @@ order to compare these differences simple two-sample z-tests were conducted.
 Test for differences in means was conducted for comparing scoring totals, shown in 
 Equation \@ref(eq:zmean). Tests for differences in proportions were conducted for
 comparing winning percentage and the three different shooting percentages, shown
-in Equation \@ref(eq:zprop).
+in Equation \@ref(eq:zprop). All 9 tests are conducted under the assumption and null
+hypothesis that there should be no difference in statistics from 2020 compared
+to those from 2017-2019.
 
 \begin{align}
     z = \frac{(\bar{X}_1 - \bar{X}_2)-0}{\sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}}}.
