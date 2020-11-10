@@ -20,7 +20,7 @@ toc: False
 ---
 Abstract: 
 The 2020 NBA playoffs were played inside of a bubble in Disney World because of
-the COVID-19 pandemic. This meant that there would be no fans in attendance, 
+the COVID-19 pandemic. This meant that there were no fans in attendance, 
 games played on neutral courts and no traveling for teams, which in theory 
 removes home-court advantage from the games. This setting has attracted a lot of
 discussion as analysts and fans debated the possible effects it may have on the
