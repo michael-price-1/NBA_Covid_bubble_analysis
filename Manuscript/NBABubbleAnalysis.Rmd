@@ -202,7 +202,7 @@ winning percentage ranged from around 0.56 to 0.7 and never dipped below .5. The
 the confirmation of the expectation that the effect of home-court advantage was removed
 in the 2020 playoffs.
 
-(ref:cap-Fig1) "Winning percentage of NBA home teams in the playoffs since 2010, the green line denotes .500"
+(ref:cap-Fig1) Winning percentage of NBA home teams in the playoffs since 2010, the green line denotes .500
 ```{r Fig1, echo=FALSE, fig.cap = " (ref:cap-Fig1)", fig.align='center'}
 winyear <- cbind(winpct, years)
 winyear <- as.data.frame(winyear)
@@ -235,7 +235,7 @@ ggplot(combined) +
 ```
    
 Figure \@ref(fig:Fig3) shows home shooting for two pointers, three pointers and
-free throws for 2020(top) vs. 2017-19(bottom). The histograms appear to be fairly
+free throws for 2020 (top) vs. 2017-19 (bottom). The histograms appear to be fairly
 similarly distributed between 2020 and 2017-19. Likewise, Figure \@ref(fig:Fig4),
 shows the same data except for away teams. Just like Figure \@ref(fig:Fig3),
 Figure \@ref(fig:Fig4) histograms don’t show any obvious differences. The normality
