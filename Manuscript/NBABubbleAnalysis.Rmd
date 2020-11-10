@@ -287,18 +287,6 @@ ggplot(awaygraph) +
   geom_histogram(aes(x = Percentage, y = ..density..), fill = "#F8766D", bins = 10, binwidth = 5)+
   facet_grid(Year ~ Type)
 ```
-  
-  Given the approximate normality of data, 9 different z-tests were performed in 
-  order to test the effects of the COVID bubble on the 2020 NBA playoffs. The 9 questions were:  
-* Is the home team winning percentage in 2020 different than that it was in 2017-2019?  
-* Is the average home team scoring different in 2020 than it was over 2017-2019?  
-* Is the average away team scoring different in 2020 than it was over 2017-2019?  
-* Are home teams making two pointers at the same rate in 2020 as 2017-2019?  
-* Are home teams making three pointers at the same rate in 2020 as 2017-2019?  
-* Are home teams making free throws at the same rate in 2020 as 2017-2019?  
-* Are away teams making two pointers at the same rate in 2020 as 2017-2019?  
-* Are away teams making three pointers at the same rate in 2020 as 2017-2019?  
-* Are away teams making free throws at the same rate in 2020 as 2017-2019?  
 
 # Methods {#sec:methods}
 The 2020 bubble provides a new and exciting opportunity to study home-court
@@ -334,6 +322,18 @@ context for how home-court advantage specifically affects performance.
 Shooting percentages aren’t the only possible metrics affected by home-court
 advantage, but they are the most obvious and certainly an important one. In
 order to compare these differences simple two-sample z-tests were conducted.
+
+Given the approximate normality of data, 9 different z-tests were performed in 
+  order to test the effects of the COVID bubble on the 2020 NBA playoffs. The 9 questions were:  
+* Is the home team winning percentage in 2020 different than that it was in 2017-2019?  
+* Is the average home team scoring different in 2020 than it was over 2017-2019?  
+* Is the average away team scoring different in 2020 than it was over 2017-2019?  
+* Are home teams making two pointers at the same rate in 2020 as 2017-2019?  
+* Are home teams making three pointers at the same rate in 2020 as 2017-2019?  
+* Are home teams making free throws at the same rate in 2020 as 2017-2019?  
+* Are away teams making two pointers at the same rate in 2020 as 2017-2019?  
+* Are away teams making three pointers at the same rate in 2020 as 2017-2019?  
+* Are away teams making free throws at the same rate in 2020 as 2017-2019?  
 
 A test for differences in means was conducted to compare scoring totals. Let
 $\bar{X}_1$ represent the average scoring total for 2020 and $\bar{X}_2$ represent
