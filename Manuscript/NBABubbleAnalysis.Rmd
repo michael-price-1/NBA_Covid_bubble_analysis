@@ -226,7 +226,7 @@ seem to be fairly normally distributed which is important for statistical analys
 It’s hard to see any clear differences between years, but it’s important to look at
 and understand the distribution of measures before moving onto the analysis.   
 
-(ref:cap-Fig2) Shows the home(blue) and away (red) scoring distributions for 2020(bottom) and 2017-2019(top)"
+(ref:cap-Fig2) Shows the home(blue) and away (red) scoring distributions for 2020(bottom) and 2017-2019(top)
 ```{r Fig2, echo=FALSE, fig.cap="(ref:cap-Fig2)", fig.align='center'}
 ggplot(combined) + 
   geom_histogram(aes(x = PTS, y = ..density.., fill = Home.Away), bins = 10, binwidth = 5)+
