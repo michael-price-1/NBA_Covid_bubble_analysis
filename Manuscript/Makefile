@@ -13,7 +13,7 @@ repos := https://cloud.r-project.org
 
 
 .PHONY: all
-all: $(pdf_out) $(html_out)
+all: $(pdf_out) # $(html_out)
 
 .PHONY: pdf
 pdf: $(pdf_out)
