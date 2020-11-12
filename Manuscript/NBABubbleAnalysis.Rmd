@@ -484,9 +484,9 @@ Home team performance did not seem to be negatively impacted by losing home-cour
 advantage like expected. Home scoring, two-point and three-point shooting
 shooting all show no significant difference, on average, between 2020 vs.
 2017-19 based on p-values from both tests. However, the Wilcoxon test and z-test have conflicting results
-for free throws. The z-test p-value of 0.0692 indictaes no significant difference, while
-the Wilcoxon test p-value of 0.0469 indicates a difference at the 5% signficance level. Since,
-the p-value of Wilcoxon test is so close to significance level and neither p-value is signifcant
+for free throws. The z-test p-value of 0.0692 indicates no significant difference, while
+the Wilcoxon test p-value of 0.0469 indicates a difference at the 5% significance level. Since,
+the p-value of Wilcoxon test is so close to significance level and neither p-value is significant
 after a Bonferonni correction for multiple tests this difference is likely not very meaningful.
 There appears to be no strong evidence suggesting home teams played at
 a lower level in 2020 than they did in previous years when they had home-court advantage.
