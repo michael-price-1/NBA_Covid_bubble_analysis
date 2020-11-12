@@ -196,7 +196,7 @@ shooting percentages for home and away teams on two pointers, three pointers, an
 free throws. These variables were very popular and frequently used in the related
 literature discussed earlier. The data was collected on a game by game basis, giving us one observation
 for each variable per game played. There were 83 games played in the 2020 playoffs. Giving us 83 observations 
-for each variable in 2020 for both home and away teams. Likewise, there was 243 games played over 
+for each variable in 2020 for both home and away teams. Likewise, there were 243 games played over 
 2017-2019. Giving us 243 observations of each variable for both home and away teams over 2017-2020. 
 While many other measures could be used for measuring
 the outcome of the game and team performance, scoring seemed to be the most
