@@ -204,6 +204,8 @@ important. The winner of a game is determined by who scores more points. So,
 naturally when studying the outcome of winning, changes in scoring and scoring
 efficiency are important to understand.
 
+\emph{Does this mean that the data for winning percentage are binary
+(1/0)?}
 
 Home-court advantage is the basic idea that the home team is more likely to win.
 So laying a foundation of typical home-court advantage is crucial. Before
@@ -352,6 +354,8 @@ the effects of the COVID bubble on the 2020 NBA playoffs:
 1. Are away teams making three pointers at the same rate in 2020 as 2017-2019?
 1. Are away teams making free throws at the same rate in 2020 as 2017-2019?
 
+\emph{Is shooting percentage the right terminology? It seems to mean
+something else (google true shooting percentage)}
 
 A test for differences in means was conducted to compare scoring
 totals. The null hypothesis is
@@ -359,18 +363,13 @@ totals. The null hypothesis is
 H_0: \mu_1 = \mu_2,
 \]
 where $\mu_1$ and $\mu_2$ are the mean scoring total in 2020 and
-2017-2019, respectively. Let
-$\bar{X}_1$ represent the average scoring total for 2020 and $\bar{X}_2$ represent
-average scoring total over 2017-19. Similarly, let $s_1^2$ represent the sample variance
-of scoring for 2020 and $s_2^2$ represent sample variance of scoring over 2017-19.
-Finally, let $n_1$ represent the number of games in 2020 and $n_2$ represent the number
-of games from 2017-2019. The null distribution of the test statistic is standard normal.
+2017-2019, respectively. We considered both the $t$-test and the
+Wilcoxon rank-sum test as implemented in R [@R]. The Wilcoxon rank-sum
+test is preferred because, unlike the $t$-test, it is distribution-free.
 The test will be conducted twice once comparing home scoring in 2020 to 2017-19 and once
-comparing away scoring in 2020 to 2017-2019. These hypotheses will also be simultaneously
-tested using the Wilcoxon Test. The advantage of running the Wilcoxon test is as a
-nonparametric test it does not rely on any normality assumption
+comparing away scoring in 2020 to 2017-2019. 
 
-
+\emph{What data were used for the test for the winning percentage?}
 Tests for differences in proportions were conducted for comparing winning percentage
 and the three different shooting percentages in 2020 to those of
 2017-2019. The null hypothesis is 
@@ -378,7 +377,7 @@ and the three different shooting percentages in 2020 to those of
 H_0: p_1 = p_2,
 \]
 where $p_1$ and $p_2$ are the shooting percentage in 2020 and
-2017-2019, respectively. Let
+2017-2019, respectively. 
 $\hat{p}_1$ represents sample proportion for 2020 and $\hat{p}_2$ represents sample
 proportion for 2017-2019. The test statistic is
 where $\hat p$ is the pooled shooting percentage of 2017-2020.
@@ -462,7 +461,8 @@ row.names(resultsfinal) <- rows
 knitr::kable(resultsfinal, caption = 'The results from the 9 tests', align = "cccccc", booktabs = TRUE)
 ```
 
-
+\emph{In the table, we have shooting rate and winning rate instead of
+percentages. So remove the percentage sign and make sure consistency throughout}
 
 Starting from the top of the 
 Table \@ref(tab:table) summarizes p-values of the nine hypotheses for both
