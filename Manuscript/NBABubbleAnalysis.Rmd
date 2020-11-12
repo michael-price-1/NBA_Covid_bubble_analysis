@@ -190,10 +190,6 @@ winpct <- c(.671, .667, .679, .635, .562, .593, .674, .570, .707, .561, .482)
 ```
 
 # Data {#sec:data}
-
-\emph{need to give some descriptive statistics on how many games in
-each sample}
-
 Data were collected from the official NBA website. The main variables of interest
 are whether or not the home team won, scoring totals for home and away teams, and
 shooting percentages for home and away teams on two pointers, three pointers, and
@@ -372,7 +368,7 @@ Finally, let $n_1$ represent the number of games in 2020 and $n_2$ represent the
 of games from 2017-2019. The null distribution of the test statistic is standard normal.
 The test will be conducted twice once comparing home scoring in 2020 to 2017-19 and once
 comparing away scoring in 2020 to 2017-2019. These tests will also be simultaneously
-conducted using the Wilcoxon Test. The advantage of running the Wilcoxon Test is as a
+conducted using the Wilcoxon Test. The advantage of running the Wilcoxon test is as a
 nonparametric test it does not rely on any normality assumption
 
 
@@ -474,36 +470,42 @@ knitr::kable(resultsfinal, caption = 'The results from the 9 tests', align = "cc
 
 
 Starting from the top of the 
-Table \@ref(tab:table) summarizes results of the nine hypotheses
-including the testing statistics and their p-values. Also reported are
-the point estimates of the two samples in each comparison and the
-confidence intervals of the true difference between the two.
+Table \@ref(tab:table) summarizes p-values of the nine hypotheses for both
+z-tests and Wilcoxon tests. The p-values are all fairly similar for both
+tests giving strong confidence in conclusions drawn. Also reported are 
+the point estimates of the two samples in each comparison.
 
 
 First, we see a statistically significant change
-in home win percentage in 2020 from 2017-19, with p-value of 0.0365. The 95%
-confidence interval of (-0.255, -0.008) confirms our belief that home-court
-advantage was lost in the 2020 NBA playoffs. However, after accounting for
-multiple tests using the Bonferroni correction, the p-value is no longer significant.
+in home win percentage in 2020 from 2017-19, with p-value of 0.0365 for the
+z-test and 0.0369 for the Wilcoxon test. The 95% confidence interval of (-0.255, -0.008) 
+confirms our belief that home-court advantage was lost in the 2020 NBA playoffs. However, after accounting for
+multiple tests using the Bonferroni correction, the p-values for both tests are no longer significant.
 So, we may only cautiously say there is evidence that home-court advantage was
 not a factor in 2020.
 
 
 Home team performance did not seem to be negatively impacted by losing home-court
-advantage like expected. Home scoring, two point, three point shooting and free
-throw shooting all show no significant difference, on average, between 2020 vs.
-2017-19. There appear to be no evidence suggesting home teams played at
+advantage like expected. Home scoring, two-point and three-point shooting
+shooting all show no significant difference, on average, between 2020 vs.
+2017-19 based on p-values from both tests. However, the Wilcoxon test and z-test have conflicting results
+for free throws. The z-test p-value of 0.0692 indictaes no significant difference, while
+the Wilcoxon test p-value of 0.0469 indicates a difference at the 5% signficance level. Since,
+the p-value of Wilcoxon test is so close to significance level and neither p-value is signifcant
+after a Bonferonni correction for multiple tests this difference is likely not very meaningful.
+There appears to be no strong evidence suggesting home teams played at
 a lower level in 2020 than they did in previous years when they had home-court advantage.
 
 
-\emph{focus on the two tests that are significant after Bonferroni
-correction.}
-
 Away teams saw more of an impact than home teams. For starters, there is a
-significant increase in mean points per game by about 5 points (95% CI: 2.083, 7.988)
-Likewise, the away team two point shooting efficiency increased by an average of
-about 0.03 (95% CI: 0.015, 0.050). However, unlike two point shooting, away
-teams did not see a statistically significant difference in three point and free
+significant increase in mean points per game, indicated by p-value of 0.0008 for z-test and
+0.0004 for Wilcoxon. It is important to note both p-values also remain significant after
+a Bonferonni correction giving strong indication of significance. The average difference in points is estimated to 
+be about 5 points (95% CI: 2.083, 7.988).Likewise, the away team two point
+shooting efficiency increased significantly based on p-value of 0.0003
+for both the z-test and Wilcoxon test. Again both p-values remain signficant after Bonferroni correction.
+The average difference can be estimated to be about 0.03 (95% CI: 0.015, 0.050). However,
+unlike two point shooting, away teams did not see a statistically significant difference in three point and free
 throw shooting. Overall, away teams have evidence of change in performance in
 the bubble. The away teams seemed to perform better than they would under normal
 conditions as a visiting team.
