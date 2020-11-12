@@ -101,7 +101,7 @@ scoring in 2020 vs 2017-2019. Similarly, we can do the same test, but for
 differences in away scoring in 2020 vs 2017-2019. Also, differences in team
 shooting (for two pointers, three pointers, and free throws) from 2020 vs 2017-2019
 for both home and away teams. The results from these tests bring a new perspective
-to understand of how home-court advantage impacts games by altering the performance
+to understanding of how home-court advantage impacts games by altering the performance
 of the home and away teams.
 
 
