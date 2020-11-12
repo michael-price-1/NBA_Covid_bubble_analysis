@@ -498,7 +498,7 @@ significant increase in mean points per game, indicated by p-value of 0.0008 for
 a Bonferonni correction giving strong indication of significance. The average difference in points is estimated to 
 be about 5 points (95% CI: 2.083, 7.988). Likewise, the away team two point
 shooting efficiency increased significantly based on p-value of 0.0003
-for both the z-test and Wilcoxon test. Again, both p-values remain signficant after Bonferroni correction.
+for both the z-test and Wilcoxon test. Again, both p-values remain significant after Bonferroni correction.
 The average difference can be estimated to be about 0.03 (95% CI: 0.015, 0.050). However,
 unlike two-point shooting, away teams did not see a statistically significant difference in three-point and free
 throw shooting. Overall, away teams have evidence of change in performance in
