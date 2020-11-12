@@ -205,7 +205,6 @@ naturally when studying the outcome of winning, changes in scoring and scoring
 efficiency are important to understand.
 
 
-
 Home-court advantage is the basic idea that the home team is more likely to win.
 So laying a foundation of typical home-court advantage is crucial. Before
 focusing on the 2017 to 2020 playoffs we can take a quick look at home team win
