@@ -366,8 +366,8 @@ of scoring for 2020 and $s_2^2$ represent sample variance of scoring over 2017-1
 Finally, let $n_1$ represent the number of games in 2020 and $n_2$ represent the number
 of games from 2017-2019. The null distribution of the test statistic is standard normal.
 The test will be conducted twice once comparing home scoring in 2020 to 2017-19 and once
-comparing away scoring in 2020 to 2017-2019. These tests will also be simultaneously
-conducted using the Wilcoxon Test. The advantage of running the Wilcoxon test is as a
+comparing away scoring in 2020 to 2017-2019. These hypotheses will also be simultaneously
+tested using the Wilcoxon Test. The advantage of running the Wilcoxon test is as a
 nonparametric test it does not rely on any normality assumption
 
 
@@ -385,8 +385,8 @@ where $\hat p$ is the pooled shooting percentage of 2017-2020.
 The null distribution of the test statistic is also standard normal.
 The test will be conducted seven times, once comparing home winning percentage for 
 2020 to that of 2017-2019 and once for each of two-point shooting, three-point shooting and
-free throws for both home and away teams in 2020 vs. 2017-2019. Again these tests will
-run simultaneously as a z-test and a Wilcoxon test.
+free throws for both home and away teams in 2020 vs. 2017-2019. These hypotheses will also be
+tested using both a z-test and a Wilcoxon test.
 
 
 # Results {#sec:results}
