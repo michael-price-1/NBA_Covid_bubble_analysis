@@ -401,58 +401,66 @@ in 2020 vs. 2017-2019.
 ```{r, echo=FALSE}
 #Analysis
 one <- prop.test(x=c(sum(game_log_2020_home$W.L), sum(game_log_2017_2019_home$W.L)),
-                 n=c(nrow(game_log_2020_home), nrow(game_log_2017_2019_home)), correct=FALSE)
-rowone <- c(as.numeric(one$estimate[1]), as.numeric(one$estimate[2]), one$conf.int,
-          sqrt(as.numeric(one$statistic)), one$p.value)
+                 n=c(nrow(game_log_2020_home), nrow(game_log_2017_2019_home)))
+onew <- wilcox.test(x = game_log_2020_home$W.L, y = game_log_2017_2019_home$W.L)
+rowone <- c(as.numeric(one$estimate[1]), as.numeric(one$estimate[2]), one$p.value, onew$p.value)
 
 two <- z.test(x=game_log_2020_home$PTS, y=game_log_2017_2019_home$PTS, sigma.x =
                 sd(game_log_2020_home$PTS), sigma.y = sd(game_log_2017_2019_home$PTS))
+twow <- wilcox.test(x=game_log_2020_home$PTS, y=game_log_2017_2019_home$PTS)
 rowtwo <- c(as.numeric(two$estimate[1])/100, as.numeric(two$estimate[2])/100,
-            two$conf.int, two$statistic, two$p.value)
+            two$p.value, twow$p.value)
 
 three <- z.test(x=game_log_2020_away$PTS, y=game_log_2017_2019_away$PTS, sigma.x =
                   sd(game_log_2020_away$PTS), sigma.y = sd(game_log_2017_2019_away$PTS))
+threew <- wilcox.test(x=game_log_2020_away$PTS, y=game_log_2017_2019_away$PTS)
 rowthree <- c(as.numeric(three$estimate[1])/100, as.numeric(three$estimate[2])/100,
-              three$conf.int, three$statistic, three$p.value)
+              three$p.value, threew$p.value)
 
 four <- prop.test(x=c(sum(game_log_2020_home$X2PM), sum(game_log_2017_2019_home$X2PM)),
                   n=c(sum(game_log_2020_home$X2PA), sum(game_log_2017_2019_home$X2PA)))
+fourw <- wilcox.test(x = game_log_2020_home$X2P., y = game_log_2017_2019_home$X2P.)
 rowfour <- c(as.numeric(four$estimate[1]), as.numeric(four$estimate[2]),
-             four$conf.int, sqrt(as.numeric(four$statistic)), four$p.value)
+              four$p.value, fourw$p.value)
 
 five <- prop.test(x=c(sum(game_log_2020_home$X3PM), sum(game_log_2017_2019_home$X3PM)),
                   n=c(sum(game_log_2020_home$X3PA), sum(game_log_2017_2019_home$X3PA)))
+fivew <- wilcox.test(x = game_log_2020_home$X3P., y = game_log_2017_2019_home$X3P.)
 rowfive <- c(as.numeric(five$estimate[1]), as.numeric(five$estimate[2]),
-             five$conf.int,  sqrt(as.numeric(five$statistic)), five$p.value)
+            five$p.value, fivew$p.value)
 
 six <- prop.test(x=c(sum(game_log_2020_home$FTM), sum(game_log_2017_2019_home$FTM)),
                  n=c(sum(game_log_2020_home$FTA), sum(game_log_2017_2019_home$FTA)))
-rowsix <- c(as.numeric(six$estimate[1]), as.numeric(six$estimate[2]), six$conf.int,
-           sqrt(as.numeric(six$statistic)), six$p.value)
+sixw <- wilcox.test(x = game_log_2020_home$FT., y = game_log_2017_2019_home$FT.)
+rowsix <- c(as.numeric(six$estimate[1]), as.numeric(six$estimate[2]),
+            six$p.value, sixw$p.value)
 
 seven <- prop.test(x=c(sum(game_log_2020_away$X2PM), sum(game_log_2017_2019_away$X2PM)),
                    n=c(sum(game_log_2020_away$X2PA), sum(game_log_2017_2019_away$X2PA)))
+sevenw <- wilcox.test(x = game_log_2020_away$X2P., y = game_log_2017_2019_away$X2P.)
 rowseven <- c(as.numeric(seven$estimate[1]), as.numeric(seven$estimate[2]),
-              seven$conf.int,  sqrt(as.numeric(seven$statistic)), seven$p.value)
+             seven$p.value, sevenw$p.value)
 
 eight <- prop.test(x=c(sum(game_log_2020_away$X3PM), sum(game_log_2017_2019_away$X3PM)),
                    n=c(sum(game_log_2020_away$X3PA), sum(game_log_2017_2019_away$X3PA)))
+eightw <- wilcox.test(x = game_log_2020_away$X3P., y = game_log_2017_2019_away$X3P.)
 roweight <- c(as.numeric(eight$estimate[1]), as.numeric(eight$estimate[2]),
-              eight$conf.int,  sqrt(as.numeric(eight$statistic)), eight$p.value)
+              eight$p.value, eightw$p.value)
 
 nine <- prop.test(x=c(sum(game_log_2020_away$FTM), sum(game_log_2017_2019_away$FTM)),
                   n=c(sum(game_log_2020_away$FTA), sum(game_log_2017_2019_away$FTA)))
+ninew <- wilcox.test(x = game_log_2020_away$FT., y = game_log_2017_2019_away$FT.)
 rownine <- c(as.numeric(nine$estimate[1]), as.numeric(nine$estimate[2]),
-             nine$conf.int,  sqrt(as.numeric(nine$statistic)), nine$p.value)
+            nine$p.value, ninew$p.value)
 
-titles <- c(2020, "2017-19", "95% CI LL", "95% CI UL", "Test Stat.", "P-value")
+titles <- c(2020, "2017-19", "Z-test P-value", "Wilcoxon P-value")
 rows <- c("Home Win %", "Home Scoring", "Away Scoring", "Home 2P%", "Home 3P%",
           "Home FT%", "Away 2P%", "Away 3P%", "Away FT%")
 results <- data.frame(rowone, rowtwo, rowthree, rowfour, rowfive, rowsix,
                     rowseven, roweight, rownine, stringsAsFactors = FALSE)
 resultsfinal <- data.frame(t(results))
-resultsfinal1 <- round(resultsfinal[1:5], 3)
-resultsfinal2 <- round(resultsfinal[6], 4)
+resultsfinal1 <- round(resultsfinal[1:2], 3)
+resultsfinal2 <- round(resultsfinal[3:4], 4)
 resultsfinal <-cbind(resultsfinal1, resultsfinal2)
 colnames(resultsfinal) <- titles
 row.names(resultsfinal) <- rows
