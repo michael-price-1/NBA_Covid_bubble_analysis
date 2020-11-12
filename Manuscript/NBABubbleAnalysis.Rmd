@@ -381,10 +381,6 @@ where $p_1$ and $p_2$ are the shooting percentage in 2020 and
 2017-2019, respectively. Let
 $\hat{p}_1$ represents sample proportion for 2020 and $\hat{p}_2$ represents sample
 proportion for 2017-2019. The test statistic is
-\begin{align}
-    z = \frac{\hat{p}_1 - \hat{p}_2}{\sqrt{\hat{p}(1-\hat{p})(\frac{1}{n_1}+\frac{1}{n_2})}},
-    (\#eq:zprop)
-\end{align}
 where $\hat p$ is the pooled shooting percentage of 2017-2020.
 The null distribution of the test statistic is also standard normal
 The test will be conducted seven times,once comparing home winning percentage for 
