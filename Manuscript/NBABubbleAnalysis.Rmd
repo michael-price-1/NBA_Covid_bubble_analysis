@@ -196,18 +196,15 @@ shooting percentages for home and away teams on two-pointers, three-pointers, an
 free throws. These variables were very popular and frequently used in the related
 literature discussed earlier. The data was collected on a game by game basis, this gave us two observations
 for each variable per game played, one observation for each team(home and away).
-There were 83 games played in the 2020 playoffs. Giving us 83 observations 
-for each variable in 2020 for both the home and away teams(166 observations total). 
-Likewise, there were 243 games played over 2017-2019. Giving us 243 observations of each variable 
-for both home and away teams over 2017-2020(486 observations total).
+There were 83 games played in the 2020 playoffs, giving 83 observations 
+for each variable in 2020 for both the home and away teams (166 observations total). 
+Likewise, there were 243 games played over 2017-2019,  giving 243 observations of each variable 
+for both home and away teams over 2017-2020 (486 observations total).
 While many other measures could be used for measuring
 the outcome of the game and team performance, scoring seemed to be the most
 important. The winner of a game is determined by who scores more points. There can only be
-one winner and one loser making the outcome a binary variable. Each game has a winner 
-denoted by a 1 in the W.L column of our data and a loser denoted by 0. Every game must result in 
-exactly one team getting a 1 and exactly one team getting a 0. Winning percentage for home
-(or away) teams can be conducted by summing the 1's for those teams together then dividing 
-by the number of games played.
+one winner and one loser making the outcome a binary variable, with
+one indicating a win and zero indicating a loss.
 
 
 Home-court advantage is the basic idea that the home team is more likely to win.
@@ -370,6 +367,9 @@ test is preferred because, unlike the $t$-test, it is distribution-free.
 The test will be conducted twice once comparing home scoring in 2020 to 2017-19 and once
 comparing away scoring in 2020 to 2017-2019. 
 
+
+\emph{separate winning percentage from the other comparisons. Use
+fisher.test for it}
 
 Tests for differences in proportions were conducted for comparing winning percentage
 and the three different shooting percentages in 2020 to those of
