@@ -31,7 +31,7 @@ advantage by comparing the 2020 season with the seasons in the past.
 While many factors contribute to the outcome of games, points scored
 is the deciding factor of who wins games, so scoring is the primary focus
 of this study. The specific measures of interest are team scoring totals and
-team shooting percentage on two pointers, three pointers, and free throws.
+team shooting percentage on two-pointers, three-pointers, and free throws.
 Comparing these measures for home teams and away teams in 2020 vs. 2017-2019
 shows that the 2020 playoffs favored away teams more than usual, particularly
 with two point shooting and total scoring.
@@ -99,7 +99,7 @@ and 2017-19 is zero. This difference is found to be statistically
 significant from zero. Then we assess for differences in home
 scoring in 2020 vs 2017-2019. Similarly, we can do the same test, but for
 differences in away scoring in 2020 vs 2017-2019. Also, differences in team
-shooting (for two pointers, three pointers, and free throws) from 2020 vs 2017-2019
+shooting (for-two pointers, three-pointers, and free throws) from 2020 vs 2017-2019
 for both home and away teams. The results from these tests bring a new perspective
 to understanding of how home-court advantage impacts games by altering the performance
 of the home and away teams.
@@ -192,20 +192,23 @@ winpct <- c(.671, .667, .679, .635, .562, .593, .674, .570, .707, .561, .482)
 # Data {#sec:data}
 Data were collected from the official NBA website. The main variables of interest
 are whether or not the home team won, scoring totals for home and away teams, and
-shooting percentages for home and away teams on two pointers, three pointers, and
+shooting percentages for home and away teams on two-pointers, three-pointers, and
 free throws. These variables were very popular and frequently used in the related
-literature discussed earlier. The data was collected on a game by game basis, giving us one observation
-for each variable per game played. There were 83 games played in the 2020 playoffs. Giving us 83 observations 
-for each variable in 2020 for both home and away teams. Likewise, there were 243 games played over 
-2017-2019. Giving us 243 observations of each variable for both home and away teams over 2017-2020. 
+literature discussed earlier. The data was collected on a game by game basis, this gave us two observations
+for each variable per game played, one observation for each team(home and away).
+There were 83 games played in the 2020 playoffs. Giving us 83 observations 
+for each variable in 2020 for both the home and away teams(166 observations total). 
+Likewise, there were 243 games played over 2017-2019. Giving us 243 observations of each variable 
+for both home and away teams over 2017-2020(486 observations total).
 While many other measures could be used for measuring
 the outcome of the game and team performance, scoring seemed to be the most
-important. The winner of a game is determined by who scores more points. So,
-naturally when studying the outcome of winning, changes in scoring and scoring
-efficiency are important to understand.
+important. The winner of a game is determined by who scores more points. There can only be
+one winner and one loser making the outcome a binary variable. Each game has a winner 
+denoted by a 1 in the W.L column of our data and a loser denoted by 0. Every game must result in 
+exactly one team getting a 1 and exactly one team getting a 0. Winning percentage for home
+(or away) teams can be conducted by summing the 1's for those teams together then dividing 
+by the number of games played.
 
-\emph{Does this mean that the data for winning percentage are binary
-(1/0)?}
 
 Home-court advantage is the basic idea that the home team is more likely to win.
 So laying a foundation of typical home-court advantage is crucial. Before
@@ -252,15 +255,15 @@ ggplot(combined) +
 ```
 
 Our second target of inference is shooting percentage for home and away teams.
-Figure \@ref(fig:Fig3) shows home shooting for two pointers, three pointers and
+Figure \@ref(fig:Fig3) shows home shooting for two-pointers, three-pointers and
 free throws for 2020 (top) vs. 2017-19 (bottom). The histograms appear to be fairly
 similarly distributed between 2020 and 2017-19. Likewise, Figure \@ref(fig:Fig4),
 shows the same percentages except for away teams. It appears that the
 two-point shooting percentage for away teams has a small shift to the
 right in 2020 relative to that in 2017-2019.
 
-(ref:cap-Fig3) Histograms of home shooting percentages for two
-pointers, three pointers and free throws for 2020 (top) vs. 2017-19 (bottom)
+(ref:cap-Fig3) Histograms of home shooting percentages for two-
+pointers, three-pointers and free throws for 2020 (top) vs. 2017-19 (bottom)
 ```{r Fig3, echo=FALSE, fig.cap="(ref:cap-Fig3)"}
 hometwo2020 <- data.frame(Year=game_log_2020_home$Year, Type=rep("Two Pointers", 83),
                           Percentage=game_log_2020_home$X2P.)
@@ -282,8 +285,8 @@ ggplot(homegraph) +
   facet_grid(Year ~ Type)
 ```
 
-(ref:cap-Fig4) Histograms of away shooting percentages for two
-pointers, three pointers and free throws for 2020 (top) vs. 2017-19 (bottom)"
+(ref:cap-Fig4) Histograms of away shooting percentages for two-
+pointers, three-pointers and free throws for 2020 (top) vs. 2017-19 (bottom)"
 ```{r Fig4, echo=FALSE, fig.cap="(ref:cap-Fig4)", fig.align='center'}
 awaytwo2020 <- data.frame(Year=game_log_2020_away$Year, Type=rep("Two Pointers", 83),
                           Percentage=game_log_2020_away$X2P.)
@@ -347,15 +350,13 @@ the effects of the COVID bubble on the 2020 NBA playoffs:
 1. Is the home team winning percentage in 2020 different than that it was in 2017-2019?
 1. Is the average home team scoring different in 2020 than it was over 2017-2019?
 1. Is the average away team scoring different in 2020 than it was over 2017-2019?
-1. Are home teams making two pointers at the same rate in 2020 as 2017-2019?
-1. Are home teams making three pointers at the same rate in 2020 as 2017-2019?
-1. Are home teams making free throws at the same rate in 2020 as 2017-2019?
-1. Are away teams making two pointers at the same rate in 2020 as 2017-2019?
-1. Are away teams making three pointers at the same rate in 2020 as 2017-2019?
+1. Are home teams making two-pointers at the same rate in 2020 as 2017-2019?
+1. Are home teams making three-pointers at the same rate in 2020 as 2017-2019?
+1. Are home teams making freethrows at the same rate in 2020 as 2017-2019?
+1. Are away teams making two-pointers at the same rate in 2020 as 2017-2019?
+1. Are away teams making three-pointers at the same rate in 2020 as 2017-2019?
 1. Are away teams making free throws at the same rate in 2020 as 2017-2019?
 
-\emph{Is shooting percentage the right terminology? It seems to mean
-something else (google true shooting percentage)}
 
 A test for differences in means was conducted to compare scoring
 totals. The null hypothesis is
@@ -369,7 +370,7 @@ test is preferred because, unlike the $t$-test, it is distribution-free.
 The test will be conducted twice once comparing home scoring in 2020 to 2017-19 and once
 comparing away scoring in 2020 to 2017-2019. 
 
-\emph{What data were used for the test for the winning percentage?}
+
 Tests for differences in proportions were conducted for comparing winning percentage
 and the three different shooting percentages in 2020 to those of
 2017-2019. The null hypothesis is 
@@ -377,10 +378,13 @@ and the three different shooting percentages in 2020 to those of
 H_0: p_1 = p_2,
 \]
 where $p_1$ and $p_2$ are the shooting percentage in 2020 and
-2017-2019, respectively. 
+2017-2019, respectively. Or $p_1$ and $p_2$ are the home winning percentage for 2020 and
+2017-2019, respectively. This proportion comes from summing the number of home teams wins
+and dividing by the total number of games played.
 $\hat{p}_1$ represents sample proportion for 2020 and $\hat{p}_2$ represents sample
 proportion for 2017-2019. The test statistic is
-where $\hat p$ is the pooled shooting percentage of 2017-2020.
+where $\hat p$ is the pooled shooting percentage of 2017-2020. Or where $\hat p$ is the 
+pooled home team winning percentage of 2017-2020.
 The null distribution of the test statistic is also standard normal.
 The test will be conducted seven times, once comparing home winning percentage for 
 2020 to that of 2017-2019 and once for each of two-point shooting, three-point shooting and
@@ -445,8 +449,8 @@ rownine <- c(as.numeric(nine$estimate[1]), as.numeric(nine$estimate[2]),
             nine$p.value, ninew$p.value)
 
 titles <- c(2020, "2017-19", "Z-test P-value", "Wilcoxon P-value")
-rows <- c("Home Win %", "Home Scoring", "Away Scoring", "Home 2P%", "Home 3P%",
-          "Home FT%", "Away 2P%", "Away 3P%", "Away FT%")
+rows <- c("Home Win ", "Home Scoring", "Away Scoring", "Home 2P", "Home 3P",
+          "Home FT", "Away 2P", "Away 3P", "Away FT")
 results <- data.frame(rowone, rowtwo, rowthree, rowfour, rowfive, rowsix,
                     rowseven, roweight, rownine, stringsAsFactors = FALSE)
 resultsfinal <- data.frame(t(results))
@@ -460,9 +464,6 @@ row.names(resultsfinal) <- rows
 ```{r table, echo = FALSE}
 knitr::kable(resultsfinal, caption = 'The results from the 9 tests', align = "cccccc", booktabs = TRUE)
 ```
-
-\emph{In the table, we have shooting rate and winning rate instead of
-percentages. So remove the percentage sign and make sure consistency throughout}
 
 Starting from the top of the 
 Table \@ref(tab:table) summarizes p-values of the nine hypotheses for both
@@ -496,7 +497,7 @@ Away teams saw more of an impact than home teams. For starters, there is a
 significant increase in mean points per game, indicated by p-value of 0.0008 for z-test and
 0.0004 for Wilcoxon. It is important to note both p-values also remain significant after
 a Bonferonni correction giving strong indication of significance. The average difference in points is estimated to 
-be about 5 points (95% CI: 2.083, 7.988). Likewise, the away team two point
+be about 5 points (95% CI: 2.083, 7.988). Likewise, the away team two-point
 shooting efficiency increased significantly based on p-value of 0.0003
 for both the z-test and Wilcoxon test. Again, both p-values remain significant after Bonferroni correction.
 The average difference can be estimated to be about 0.03 (95% CI: 0.015, 0.050). However,
@@ -562,11 +563,11 @@ home teams may be a result of inhibiting away teams.
 
 
 At least some of that improvement from away teams came from significantly higher
-two point efficiency. This corresponds with the conclusion from @Harris,
-where they found home teams are best suited to capitalize on advantages from two point
-shots. Normally, by shooting more two pointers themselves and forcing away teams to
-shoot more two pointers the home team benefits from increasing effects of
-home-court advantage. However, with away teams significantly improving two point
+two-point efficiency. This corresponds with the conclusion from @Harris,
+where they found home teams are best suited to capitalize on advantages from two-point
+shots. Normally, by shooting more two-pointers themselves and forcing away teams to
+shoot more two-pointers the home team benefits from increasing effects of
+home-court advantage. However, with away teams significantly improving two-point
 shooting in the bubble this strategy was no longer viable and home-court
 advantage disappeared.
 
