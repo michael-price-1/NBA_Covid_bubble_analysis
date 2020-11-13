@@ -477,7 +477,7 @@ the point estimates of the two samples in each comparison.
 
 
 First, we see a statistically significant change
-in home win percentage in 2020 from 2017-19, with p-value of 0.0365 for the
+in home win percentage in 2020 from 2017-19, with p-value of 0.0497 for the
 z-test and 0.0400 for Fisher's test. The 95% confidence interval of (-0.255, -0.008) 
 confirms our belief that home-court advantage was lost in the 2020 NBA playoffs. However, after accounting for
 multiple tests using the Bonferroni correction, the p-values for both tests are no longer significant.
