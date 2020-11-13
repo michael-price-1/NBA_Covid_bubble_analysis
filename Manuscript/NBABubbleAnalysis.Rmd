@@ -401,7 +401,7 @@ one <- prop.test(x=c(sum(game_log_2020_home$W.L), sum(game_log_2017_2019_home$W.
 X2020 <- table(game_log_2020_home$W.L)
 X17_19 <- table(game_log_2017_2019_home$W.L)
 homewin<- rbind(X2020, X17_19)
-onew <- wilcox.test(x = game_log_2020_home$W.L, y = game_log_2017_2019_home$W.L)
+onew <- fisher.test(x = homewin)
 rowone <- c(as.numeric(one$estimate[1]), as.numeric(one$estimate[2]), one$p.value, onew$p.value)
 
 two <- z.test(x=game_log_2020_home$PTS, y=game_log_2017_2019_home$PTS, sigma.x =
