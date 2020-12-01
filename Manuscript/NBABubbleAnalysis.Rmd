@@ -11,7 +11,9 @@ papersize: letter
 fontsize: 11pt
 bibliography: citations.bib
 biblio-style: asa
-output: bookdown::pdf_document2
+output: 
+  bookdown::pdf_document2:
+    keep_tex: yes
 header-includes:
    - \usepackage[margin=1in]{geometry}
    - \usepackage {hyperref}
