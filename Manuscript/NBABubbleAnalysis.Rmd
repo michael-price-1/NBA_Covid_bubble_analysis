@@ -575,4 +575,148 @@ repeated. It may not be possible to have a follow-up study using the
 same measures with a different sample. Otherwise, that type of study
 could help strengthen the conclusion in this paper.
 
+# Appendix {#sec:Appendix}
+```{r, echo=FALSE}
+permutation_test <- function(data1, data2, test_column_num, n, R) {
+  #calculate test statsitic and store it
+  z <- z.test(x=data1[ ,test_column_num], y=data2[ ,test_column_num], sigma.x =
+                sd(data1[ ,test_column_num]), sigma.y = sd(data2[ ,test_column_num]))
+  z <- abs(z$statistic)
+  
+  #calculate mean of combined samples
+  overallmean<-c(data1[ ,test_column_num], data2[ ,test_column_num])
+  overallmean<-mean(overallmean)
+ 
+  #transform datasets using xi*=xi-x̄-z̄
+  data1transformed <- data1[ ,test_column_num] - mean(data1[ ,test_column_num]) + overallmean
+  data1transformed <- data.frame(data1transformed)
+  data2transformed <- data2[ ,test_column_num] - mean(data2[ ,test_column_num]) + overallmean
+  data2transformed <- data.frame(data2transformed)
+  
+  #collect R samples of n data points from each group and calculate test statistic between each pair of samples
+  bootstrap <- data.frame("Bootsrap T-stat"=numeric(), "Condition"=numeric())
+  set.seed(1234)
+  for (i in 1:R){
+    sample1 <- data1transformed[sample(1:nrow(data1transformed), nrow(data1transformed), replace=TRUE),]
+    sample2 <- data2transformed[sample(1:nrow(data2transformed), nrow(data2transformed), replace=TRUE),]
+    
+    bt <- z.test(x=sample1, y=sample2, sigma.x =
+                  sd(sample1), sigma.y = sd(sample2))
+    bts <- abs(bt$statistic)
+    
+    bootstrap[i, ] <- bts
+    #determine if bootstrap statistics is larger than observed and save result
+    if(bootstrap[i,1] >= z) {bootstrap[i,2]=1} else {bootstrap[i,2]=0}
+  }
+  #calculate proportion of bootsrap t-statistics wihch are larger than or equal to observed test statistic
+  p_value <- sum(bootstrap[, 2])/nrow(bootstrap)
+  return(p_value)
+}
+
+row_one <- permutation_test(game_log_2020_home, game_log_2017_2019_home, 6, 100, 10000)
+row_two <-permutation_test(game_log_2020_home, game_log_2017_2019_home, 8, 100, 10000)
+row_three <- permutation_test(game_log_2020_away, game_log_2017_2019_away, 8, 100, 10000)
+row_four <- permutation_test(game_log_2020_home, game_log_2017_2019_home, 14, 100, 10000)
+row_five <- permutation_test(game_log_2020_home, game_log_2017_2019_home, 17, 100, 10000)
+row_six <- permutation_test(game_log_2020_home, game_log_2017_2019_home, 20, 100, 10000)
+row_seven <-  permutation_test(game_log_2020_away, game_log_2017_2019_away, 14, 100, 10000)
+row_eight <- permutation_test(game_log_2020_away, game_log_2017_2019_away, 17, 100, 10000)
+row_nine <- permutation_test(game_log_2020_away, game_log_2017_2019_away, 20, 100, 10000)
+perm_test_res <- c(row_one, row_two, row_three, row_four, row_five, row_six, row_seven, row_eight, row_nine)
+perm_test_col <- matrix(data=perm_test_res, ncol = 1)
+app_resultsfinal <-cbind(resultsfinal, perm_test_col)
+colnames(app_resultsfinal)[5] <- "Bootstrap Z-test"
+```
+
+
+In an effort to advance and strengthen the paper we conducted bootstrap analysis for every
+hypothesis. A custom R function was developed and utilized to conduct this analysis, the code for 
+that function can be found below:
+
+```{r, echo = TRUE, eval=FALSE}
+permutation_test <- function(data1, data2, test_column_num, n, R) {
+  #calculate test statsitic and store it
+  z <- z.test(x=data1[ ,test_column_num], y=data2[ ,test_column_num], sigma.x =
+                sd(data1[ ,test_column_num]), sigma.y = sd(data2[ ,test_column_num]))
+  z <- abs(z$statistic)
+  
+  #calculate mean of combined samples
+  overallmean<-c(data1[ ,test_column_num], data2[ ,test_column_num])
+  overallmean<-mean(overallmean)
+ 
+  #transform datasets using xi*=xi-x̄-z̄
+  data1transformed <- data1[ ,test_column_num] - mean(data1[ ,test_column_num]) + overallmean
+  data1transformed <- data.frame(data1transformed)
+  data2transformed <- data2[ ,test_column_num] - mean(data2[ ,test_column_num]) + overallmean
+  data2transformed <- data.frame(data2transformed)
+  
+  #collect R samples of n data points from each group and calculate test statistic between each pair of samples
+  bootstrap <- data.frame("Bootsrap T-stat"=numeric(), "Condition"=numeric())
+  set.seed(1234)
+  for (i in 1:R){
+    sample1 <- data1transformed[sample(1:nrow(data1transformed), nrow(data1transformed), replace=TRUE),]
+    sample2 <- data2transformed[sample(1:nrow(data2transformed), nrow(data2transformed), replace=TRUE),]
+    
+    bt <- z.test(x=sample1, y=sample2, sigma.x =
+                  sd(sample1), sigma.y = sd(sample2))
+    bts <- abs(bt$statistic)
+    
+    bootstrap[i, ] <- bts
+    #determine if bootstrap statistics is larger than observed and save result
+    if(bootstrap[i,1] >= z) {bootstrap[i,2]=1} else {bootstrap[i,2]=0}
+  }
+  #calculate proportion of bootsrap t-statistics wihch are larger than or equal to observed test statistic
+  p_value <- sum(bootstrap[, 2])/nrow(bootstrap)
+  return(p_value)
+}
+```
+
+The results from the bootstrap tests can be compared to the previous tests results 
+in order to strengthen understanding. These comparisons can be made using the table, Table 
+\@ref(tab:table2), below.
+
+```{r table2, echo = FALSE}
+knitr::kable(app_resultsfinal, caption = 'Previous Results Side By Side With Bootstrap Results', align = "cccccc", booktabs = TRUE)
+```
+
+As you can see in the table, the p-values for the tests using bootstrapping
+align closely with p-values from the other tests. Starting with the home team
+win percentage, we see our p-value is 0.0405. This is important because 
+earlier in our paper we found that the p-values for z-test(.0497) and Fisher’s
+exact test(.0400) were initially significant, but not after a Bonferroni 
+correction. Thus, the bootstrapping result gives some extra level of confidence
+to the conclusion that the home team winning percentage was different from
+years past.
+
+For home teams, the bootstrapping tests seem to confirm the conclusion
+playing in the NBA bubble had very little impact on performance. The bootstrap
+tests for home scoring, two-point percentage and three-point percentage all
+have very high p-values and agree with previous tests that there is no evidence
+of a difference in these measures. One interesting finding is for the home team
+free throw percentage. Earlier, we found the z-test (p=0.0692) was insignificant,
+but the Wilcoxon test(p=0.0496) was significant. The bootstrapping test(p=0.551)
+agrees with the z-test that there is no significant change in home team free throw
+percentage. Since two of three tests run are insignificant and the third is very
+close, it is probably safest to conservatively say that there is not much evidence
+to support a claim that home team free throw percentage changed.
+
+For away teams, we saw the bootstrapping test confirm the results of the previous
+tests in every case. The bootstrapping methods corroborate the insignificant 
+results for away three-point (p=0.3494) and away free throw shooting (p=0.4743).
+Likewise, away team scoring(p=.0012) and two-point percentage(p=.0001) still had
+highly significant p-values for the bootstrap test, just like the other tests for
+these two measures. This gives us great confidence that away scoring and two-point
+percentage changed in the bubble. If you recall, the confidence intervals for 
+these measures support the claim that they increased. This is important because
+it suggests when home-court advantage is removed, away teams were able to score 
+more points by increased two-point efficiency, suggesting home-court advantage 
+stems from an adverse effect on away teams. Recall that @Harris found that 
+home-court advantage was maximized when home teams capitalized on their
+advantage shooting the two-pointer. When away teams no longer face more 
+challenging conditions for two-point shooting while going on the road, home
+teams lose their advantage. 
+
+Overall, the addition of the bootstrapping methods to the study
+appear to strengthen the conclusions made in the paper.
+
 # References {#sec:ref}
