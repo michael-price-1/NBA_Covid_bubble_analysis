@@ -634,7 +634,7 @@ hypothesis. A custom R function was developed and utilized to conduct this analy
 that function can be found below:
 
 ```{r, echo = TRUE, eval=FALSE}
-permutation_test <- function(data1, data2, test_column_num, n, R) {
+permutation_test <- function(data1, data2, test_column_num, R) {
   #calculate test statsitic and store it
   z <- z.test(x=data1[ ,test_column_num], y=data2[ ,test_column_num], sigma.x =
                 sd(data1[ ,test_column_num]), sigma.y = sd(data2[ ,test_column_num]))
