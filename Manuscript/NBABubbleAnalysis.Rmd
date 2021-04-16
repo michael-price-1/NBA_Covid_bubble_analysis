@@ -633,7 +633,7 @@ In an effort to advance and strengthen the paper we conducted bootstrap analysis
 hypothesis. A custom R function was developed and utilized to conduct this analysis, the code for 
 that function can be found below:
 
-```{r, echo = TRUE, eval=FALSE}
+```{r, echo = TRUE, eval=FALSE, tidy=TRUE, tidy.opts=list(width.cutoff=50)}
 permutation_test <- function(data1, data2, test_column_num, R) {
   #calculate test statsitic and store it
   z <- z.test(x=data1[ ,test_column_num], y=data2[ ,test_column_num], sigma.x =
