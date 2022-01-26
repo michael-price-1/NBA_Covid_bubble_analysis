@@ -354,22 +354,18 @@ Wilcoxan's rank-sum test, were performed using R \citep{R}.
   \caption{The results from the 9 tests.}
   \label{tab:table}
 \centering
-\begin{tabular}[t]{lcccc}
-  \toprule
-  & 2020 & 2017-19 & \multicolumn{2}{c}{P-value}\\
-  \cmidrule(lr){4-5}
-  &          &                & Z-test & Wilcoxan\\
-\midrule
-Home Win & 0.482 & 0.613 & 0.0497 & 0.0400\\
-Home Scoring & 1.101 & 1.081 & 0.2321 & 0.2985\\
-Away Scoring & 1.091 & 1.040 & 0.0008 & 0.0004\\
-Home 2P & 0.523 & 0.515 & 0.4335 & 0.5719\\
-Home 3P & 0.363 & 0.357 & 0.5733 & 0.8852\\
-Home FT & 0.793 & 0.774 & 0.0692 & 0.0496\\
-Away 2P & 0.536 & 0.504 & 0.0003 & 0.0003\\
-Away 3P & 0.357 & 0.346 & 0.3256 & 0.3081\\
-Away FT & 0.783 & 0.777 & 0.6601 & 0.8370\\
-\bottomrule
+\begin{tabular}[t]{lcccccc}
+  & 2020 & 2017-19 & \multicolumn{2}{c}{P-value} & \multicolumn{2}{c}{Adjusted P-value}\\
+  &          &                & Z-test & Wilcoxan & Z-test & Wilcoxan\\
+Home Win & 0.482 & 0.613 & 0.0497* & 0.0400* & .4473 & 0.3598\\
+Home Scoring & 1.101 & 1.081 & 0.2321 & 0.2985 & 1 & 1\\
+Away Scoring & 1.091 & 1.040 & 0.0008* & 0.0004* & 0.0075* & 0.0035*\\
+Home 2P & 0.523 & 0.515 & 0.4335 & 0.5719 & 1 & 1\\
+Home 3P & 0.363 & 0.357 & 0.5733 & 0.8852 & 1 & 1\\
+Home FT & 0.793 & 0.774 & 0.0692 & 0.0496* & 0.6228 & 0.4464\\
+Away 2P & 0.536 & 0.504 & 0.0003* & 0.0003* & 0.0030 & 0.0023\\
+Away 3P & 0.357 & 0.346 & 0.3256 & 0.3081 & 1 & 1\\
+Away FT & 0.783 & 0.777 & 0.6601 & 0.8370 & 1 & 1\\
 \end{tabular}
 \end{table}
 
