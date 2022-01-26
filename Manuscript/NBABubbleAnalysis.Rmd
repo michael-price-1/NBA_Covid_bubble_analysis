@@ -447,7 +447,7 @@ ninew <- wilcox.test(x = game_log_2020_away$FT., y = game_log_2017_2019_away$FT.
 rownine <- c(as.numeric(nine$estimate[1]), as.numeric(nine$estimate[2]),
             nine$p.value, ninew$p.value)
 
-titles <- c(2020, "2017-19", "Z-test P-value", "Nonparametric P-value")
+titles <- c(2020, "2017-19", "Z-test P-value", "Nonparametric P-value", "Adj P-value Z", "Adj P-value W")
 rows <- c("Home Win ", "Home Scoring", "Away Scoring", "Home 2P", "Home 3P",
           "Home FT", "Away 2P", "Away 3P", "Away FT")
 results <- data.frame(rowone, rowtwo, rowthree, rowfour, rowfive, rowsix,
@@ -455,7 +455,8 @@ results <- data.frame(rowone, rowtwo, rowthree, rowfour, rowfive, rowsix,
 resultsfinal <- data.frame(t(results))
 resultsfinal1 <- round(resultsfinal[1:2], 3)
 resultsfinal2 <- round(resultsfinal[3:4], 4)
-resultsfinal <-cbind(resultsfinal1, resultsfinal2)
+resultsfinal3 <- round(resultsfinal[3:4]*9, 4)
+resultsfinal <-cbind(resultsfinal1, resultsfinal2, resultsfinal3)
 colnames(resultsfinal) <- titles
 row.names(resultsfinal) <- rows
 ```
