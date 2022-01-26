@@ -248,11 +248,15 @@ compared with that in 2017-2019.
 (ref:cap-Fig2)  Histograms of home (blue) and away (red) scoring
 for 2020 (bottom) and 2017-2019 (top)
 ```{r Fig2, echo=FALSE, fig.cap="(ref:cap-Fig2)", fig.align='center'}
+ref_line2 <- aggregate(data=combined, PTS ~ Year + Home.Away, FUN=mean)
+
 pdf("Fig2.pdf")
 ggplot(combined) +
   geom_histogram(aes(x = PTS, y = ..density.., fill = Home.Away), bins = 10, binwidth = 5)+
   facet_grid(Year ~ Home.Away)+
-  theme(legend.position = "none")
+  theme(legend.position = "none")+
+  geom_vline(data=ref_line2, aes(xintercept=PTS))+
+  geom_text(data=ref_line2, aes(x=PTS+3.5, label="mean", y=0.045))
 ```
 
 Our second target of inference is shooting percentage for home and away teams.
@@ -280,10 +284,13 @@ homeFT2017_2019 <- data.frame(Year=game_log_2017_2019_home$Year, Type=rep("Free 
                               Percentage=game_log_2017_2019_home$FT.)
 homegraph<-rbind(hometwo2020, homethree2020, homeFT2020, hometwo2017_2019, homethree2017_2019,
                  homeFT2017_2019)
+ref_line3 <- aggregate(data=homegraph, Percentage ~ Year + Type, FUN=mean)
 pdf("Fig3.pdf")
 ggplot(homegraph) +
   geom_histogram(aes(x = Percentage, y = ..density..), fill = "#00BFC4", bins = 10, binwidth = 5)+
-  facet_grid(Year ~ Type)
+  facet_grid(Year ~ Type)+
+  geom_vline(data=ref_line3, aes(xintercept=Percentage))+
+  geom_text(data=ref_line3, aes(x=Percentage+6, label="mean", y=0.075))
 ```
 
 (ref:cap-Fig4) Histograms of away shooting percentages for two-
@@ -303,10 +310,13 @@ awayFT2017_2019 <- data.frame(Year=game_log_2017_2019_away$Year, Type=rep("Free 
                               Percentage=game_log_2017_2019_away$FT.)
 awaygraph<-rbind(awaytwo2020, awaythree2020, awayFT2020, awaytwo2017_2019, awaythree2017_2019,
                  awayFT2017_2019)
+ref_line4 <- aggregate(data=awaygraph, Percentage ~ Year + Type, FUN=mean)
 pdf("Fig4.pdf")
 ggplot(awaygraph) +
   geom_histogram(aes(x = Percentage, y = ..density..), fill = "#F8766D", bins = 10, binwidth = 5)+
-  facet_grid(Year ~ Type)
+  facet_grid(Year ~ Type)+
+  geom_vline(data=ref_line4, aes(xintercept=Percentage))+
+  geom_text(data=ref_line4, aes(x=Percentage+6, label="mean", y=0.075))
 ```
 
 # Methods {#sec:methods}
