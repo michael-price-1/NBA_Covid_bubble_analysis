@@ -197,7 +197,22 @@ Data were collected from the official NBA website. The main variables of interes
 are whether or not the home team won, scoring totals for home and away teams, and
 shooting percentages for home and away teams on two-pointers, three-pointers, and
 free throws. These variables were very popular and frequently used in the related
-literature discussed earlier. The data was collected on a game by game basis, this gave us two observations
+literature discussed earlier. While many other measures could be used for examining
+the outcome of the game and team performance, scoring seemed to be the most
+important. The winner of a game is determined by who scores more points. The three types of shots are anatural discussion point in basketball, as they're all
+important and directly impact scoring totals. Free throws can often determine the winner of close
+games, as losing teams are forced to foul the winning team to
+stop the clock and hope for some missed free throws. The three
+point shot has grown very prominent in basketball as teams have
+increased their volume of three point shots in response to the
+recent success of the Golden State Warriors and Stephen Curry. Due to this fact, is a growing consensus the three point shot is most important in basketball.
+However, two point shots are not to be overlooked and may
+actually be most important, especially for home teams, according
+to @Harris. In fact 2020 NBA champion Los Angeles Lakers actually
+led league in two point percentage throughout the playoffs and were bottom five in three point percentage
+
+
+The data was collected on a game by game basis, this gave us two observations
 for each variable per game played, one observation for each team(home and away).
 There were 83 games played in the 2020 playoffs, giving 83 observations 
 for each variable in 2020 for both the home and away teams (166 observations total). 
