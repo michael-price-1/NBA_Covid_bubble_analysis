@@ -115,17 +115,18 @@ statistics, specifically field goal percentage, free throw percentage, and
 points by comparing home performance vs. away performance in games.
 All of which he showed significantly indicates that
 home-court helps teams play better. @Cao studied the effects
-of pressure on performance in the NBA. Using throws as their measure of
+of pressure on performance in the NBA. Using free throws as their measure of
 interest, they tested whether home
 fans could distract and put pressure on opposing players to make free
-throws. However, they found insignificant
+throws. However, they did not find significant evidence
 evidence that home status has a substantial impact on missing from the free throw
 line. @Harris used two point shots, three-point shots and free throws as measures
 of interest to study home-court advantage. Two point shots were found to be
 the strongest predictor of home-court advantage. They suggested
 that home teams should try to shoot more two point shots and force
-their opponent to take more two point shot attempts. This strategy will maximize
-the benefits of home-court advantage and give them the best chance to win.
+their opponent to take more two point shot attempts. This minimum variance strategy will 
+help home teams have a greater control of the game play and help maximize the benefits 
+home court advantange.
 
 
 Some studies focus less on shooting and more on scoring differences and other metrics.
@@ -159,10 +160,10 @@ if one team was designated as “home team”. This study was reviewed a decade 
 by @Carron2005. The 2005 review goes over the new findings from studies
 about the significance of these four game location factors. Since 1992 they found
 that results on these four factors are mixed. However, there is some evidence
-supporting crowd and travel factors impact games in the NBA. There is less
-evidence suggesting learning and rule factors impact the NBA. One interesting
-finding cited by @Carron2005 is that in the absence of crowds result
-in overall performance increases.
+supporting crowd and travel factors impact games across all major sports. There is less
+evidence suggesting learning and rule factors impact across the various collegiate 
+and professional sports, regardless, the NBA is not a league which has rules that
+may favor the home team like batting last in the MLB. One interesting finding cited by @Carron2005 is that in the absence of crowds result in overall performance increases.
 
 
 ```{r data, include=FALSE}
