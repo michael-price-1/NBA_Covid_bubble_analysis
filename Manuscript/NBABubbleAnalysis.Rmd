@@ -242,7 +242,7 @@ away scoring (red) for 2020 vs. 2017-2019. All histograms are
 fairly bell shaped, which is important for statistical tests
 designed for normally distribute data. There appears to be little
 difference between the 2020 and 2017-2019 for home scoring, but for
-away scoring, a noticeable shift to the right in 2020 is observed
+away scoring, a more pronounced shift to the right in 2020 is observed
 compared with that in 2017-2019.
 
 
@@ -465,6 +465,7 @@ row.names(resultsfinal) <- rows
 ```{r table, echo = FALSE}
 knitr::kable(resultsfinal, caption = 'The results from the 9 tests', align = "cccccc", booktabs = TRUE)
 ```
+Note: Home and Away scoring totals are divided by 100
 
 Starting from the top of the 
 Table \@ref(tab:table) summarizes p-values of the nine hypotheses for both
