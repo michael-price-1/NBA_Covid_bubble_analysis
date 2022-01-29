@@ -53,7 +53,28 @@ benefits from some competitive edge from playing at their home-court, resulting
 in a better chance of winning. Thus, the NBA playing the 2020 playoffs in a
 bubble due to the COVID-19 pandemic
 brought a great deal of concern for fans, teams, journalists, and others.
-For example, @Aschburner discusses about anticipated effects, sharing
+Among the biggest is the effect from the crowd, a home crowd has the ability
+to energize home teams, help control momentum in favor of the home team and 
+create a chaotic and stressful environment for away teams to play in. There 
+is no way replicate these effects in the bubble conditions. Also, there are 
+geographic factors that are lost like altitude and time-zone effects. There's 
+evidence teams across all sports in high altitude regions can rely on away
+teams coming in and struggling with lower oxygen levels at a higher altitude, 
+which the home teams are accustomed to playing with \citet{Lopez}. Examples,
+of high altitude teams in the NBA would be the Utah Jazz and Denver Nuggets, 
+both of whom participated in the 2020 NBA bubble. Also, referees are known to
+be subject to favoring home teams in large part due pressure from fans, which
+is no longer in play in the bubble. Refs may still have biases, but there's
+nothing to sway that bias towards the home team like normal. Any positive 
+effects of the home team playing in the arena they're most comfortable in 
+and living in the comfort of their own home are also lost. Travel is also 
+normally discussed as a factor hurting away teams, but for the context of
+the playoffs in the bubble losing this may not be significant. In the
+playoffs, many times (aside from the first game of the series when the 
+away team travels) both teams often travel at the same time since they're 
+both going back and forth between the two cities to complete the series.
+
+ @Aschburner discusses the anticipated effects, sharing
 concerns from former players, coaches and other experts about
 the potential effects of removing home-court advantage. Aschburner notes that the
 NBA did make attempts to recreate the effects by putting the "home” team logo on
