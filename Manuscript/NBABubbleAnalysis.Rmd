@@ -203,14 +203,11 @@ important. The winner of a game is determined by who scores more points. The thr
 important and directly impact scoring totals. Free throws can often determine the winner of close
 games, as losing teams are forced to foul the winning team to
 stop the clock and hope for some missed free throws. The three
-point shot has grown very prominent in basketball as teams have
-increased their volume of three point shots in response to the
-recent success of the Golden State Warriors and Stephen Curry. Due to this fact, is a growing consensus the three point shot is most important in basketball.
+point shot has grown very prominent in basketball as the entire NBA has increased their volume of three point shot attempts in response to the
+recent success of the Golden State Warriors and Stephen Curry. Due to this fact, there is a growing consensus the three point shot is most important in basketball. 
 However, two point shots are not to be overlooked and may
 actually be most important, especially for home teams, according
-to @Harris. In fact 2020 NBA champion Los Angeles Lakers actually
-led league in two point percentage throughout the playoffs and were bottom five in three point percentage
-
+to \citet{Harris}. In fact, 2020 NBA champion Los Angeles Lakers actually led league in two point percentage throughout the playoffs and were bottom five in three point percentage.
 
 The data was collected on a game by game basis, this gave us two observations
 for each variable per game played, one observation for each team(home and away).
