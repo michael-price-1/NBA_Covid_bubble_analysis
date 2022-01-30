@@ -576,6 +576,15 @@ correction. Only away team scoring being significantly impacted by playing on
 a neutral court indicates that home-court advantage stems mainly from adverse
 effects on the visiting team.
 
+At least some of that improvement from away teams came from significantly higher
+two-point efficiency. This corresponds with the conclusion from \citet{Harris},
+where they found home teams are best suited to capitalize on advantages from two-point
+shots. Normally, by shooting more two-pointers themselves and forcing away teams to
+shoot more two-pointers the home team benefits from increasing effects of
+home-court advantage. However, with away teams significantly improving two-point
+shooting in the bubble this strategy was no longer viable and home-court
+advantage disappeared.
+
 To get a bit more detailed, we saw an estimated 3\% increase in away two point
 shooting percentage. Likewise, NBA teams shot
 an average of about 53 two point shots per game, in our data, leading to a three 
@@ -617,7 +626,6 @@ overall performance to drop, then home court advantage must come from a bigger d
 in away performance than the drop in home performance. This is why away teams were
 able to close the gap with home teams with home-court advantage removed.
 
-
 Separating the effects of the home-court advantage into home effects and away
 effects allowed for some interesting new insights. Previously, we knew that on
 average home teams outperformed away teams. It was less clear whether it was
@@ -634,15 +642,32 @@ increase in winning. The improvement of away teams confirms a proposition from
 @Greer that the positive social impact of crowds benefiting
 home teams may be a result of inhibiting away teams.
 
+It's worth noting that much of this paper discussed the the effects from an
+offensive point of view, focusing on a teams ability to score. However, one 
+of the main factors that influence an offense's ability to score is the opposing
+defense. It's possible that home court advantage mainly functions as an extra defender
+for home teams, which is how it negatively impacts away scoring. There is not much
+home fans can do to help their team on offense, except being quiet so players can 
+easily communicate and focus. However, when on defense fans can support their team
+by cheering loudly and making it harder on the offense. This would explain how away 
+teams were able to improve offensively in the bubble. Home teams did not have the 
+regular help from the noise of fans that hinder the away team's offensive efforts. 
+This would also explain why home team offense didn't show significant change in the 
+bubble, the in-game offensive environment was largely unaltered for home teams
+since the bubble provided the same quiet environment they're used to at home while
+on offense. Meanwhile, removing the "sixth defender" from home team defensive efforts 
+allowed away teams to work more effectively on offense.
 
-At least some of that improvement from away teams came from significantly higher
-two-point efficiency. This corresponds with the conclusion from @Harris,
-where they found home teams are best suited to capitalize on advantages from two-point
-shots. Normally, by shooting more two-pointers themselves and forcing away teams to
-shoot more two-pointers the home team benefits from increasing effects of
-home-court advantage. However, with away teams significantly improving two-point
-shooting in the bubble this strategy was no longer viable and home-court
-advantage disappeared.
+An interesting finding is all shooting and scoring numbers for both home and
+away teams did make at least small increases. Although these increases
+were not all significant these increases are exactly what is reported in
+@Carron2005 when they explain how evidence suggests that teams perform
+better with the absence of fans. This is important because it coincides with our
+conclusion that home-court advantage mostly plays into games by negatively impacting away
+teams by acting as an extra defender. If fans cause overall performance to drop, then home 
+court advantage must come from a bigger drop in away performance than the drop in home
+performance. This is why away teams were able to close the gap with home teams with
+home-court advantage removed.
 
 
 Future studies may want to use the 2020 NBA bubble and compare vs previous years
