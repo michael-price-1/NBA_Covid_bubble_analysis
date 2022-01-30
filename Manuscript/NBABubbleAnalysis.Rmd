@@ -643,20 +643,23 @@ increase in winning. The improvement of away teams confirms a proposition from
 home teams may be a result of inhibiting away teams.
 
 It's worth noting that much of this paper discussed the the effects from an
-offensive point of view, focusing on a teams ability to score. However, one 
+offensive point of view, focusing on a teams ability to score. However, one
 of the main factors that influence an offense's ability to score is the opposing
-defense. It's possible that home court advantage mainly functions as an extra defender
-for home teams, which is how it negatively impacts away scoring. There is not much
-home fans can do to help their team on offense, except being quiet so players can 
-easily communicate and focus. However, when on defense fans can support their team
-by cheering loudly and making it harder on the offense. This would explain how away 
-teams were able to improve offensively in the bubble. Home teams did not have the 
-regular help from the noise of fans that hinder the away team's offensive efforts. 
-This would also explain why home team offense didn't show significant change in the 
-bubble, the in-game offensive environment was largely unaltered for home teams
-since the bubble provided the same quiet environment they're used to at home while
-on offense. Meanwhile, removing the "sixth defender" from home team defensive efforts 
-allowed away teams to work more effectively on offense.
+defense. It's possible that home court advantage mainly functions as an extra
+defender for home teams, which is how it negatively impacts away scoring. There
+is not much home fans can do to help their team on offense, except being quiet
+so players can easily communicate and focus. However, when on defense, fans can
+act as a "sixth defender" supporting their team by cheering loudly and making it
+harder on the offense. This would explain how away teams were able to improve
+offensively in the bubble. Home teams did not have the regular help from the
+noise of fans that hinder the away team's offensive efforts. This would also
+explain why home team offense didn't show significant change in the bubble, the
+in-game offensive environment was largely unaltered for home teams since the
+bubble provided the same quiet environment they're used to at home while on
+offense. I still believe home court advantage is better categorized as a
+negative effect on away team offense, since it's more likely
+noise from fans lowers level of play of away offense rather than raise the level
+of play of home defense. This will be further discussed below.
 
 An interesting finding is all shooting and scoring numbers for both home and
 away teams did make at least small increases. Although these increases
