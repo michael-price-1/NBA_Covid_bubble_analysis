@@ -428,7 +428,22 @@ or shooting percentages from the 84 games in 2020 and the 243 games in
 All three tests, namely the $z$-test, Fisher's exact test, and
 Wilcoxan's rank-sum test, were performed using R [@R]. 
 
-
+Regression was also considered, but it did not seem to add any additional useful
+insight to answering the questions presented. Regression is a popular
+tool in home court advantage studies, but as mentioned previously, this
+study is very different from past studies. Rather than trying to prove the
+existence of home court advantage, like many previous studies, this paper
+was more interested in generating a clearer understanding of how home court
+advantage effects each team. The most effective way to do that is hypothesis
+testing to compare performance in the neutral bubble to previous years with
+normal game conditions for both the home and away team. Another potential
+benefit of regression would have been the ability to control for factors
+like strength of opponent. However, we felt that strength of team was
+already well enough controlled for by the fact that we focused on the
+playoffs. The playoffs only include the strongest 16 of 30 teams, then
+continue to remove the less competitive teams, so that the talent disparity
+between teams is much smaller than regular season play where controlling for
+opponent strength is likely more important.
 
 # Results {#sec:results}
 ```{r, echo=FALSE}
