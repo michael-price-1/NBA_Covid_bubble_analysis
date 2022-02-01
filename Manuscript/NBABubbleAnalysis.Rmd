@@ -684,7 +684,14 @@ for home-court advantage. Although the study is limited by a one time
 sample, it seems unlikely that these conditions will ever be
 repeated. It may not be possible to have a follow-up study using the
 same measures with a different sample. Otherwise, that type of study
-could help strengthen the conclusion in this paper.
+could help strengthen the conclusion in this paper. Also, you could
+answer more questions with a larger sample size. For example,  testing
+strength of home court advantage relative to specific teams, like the
+Denver Nuggets and Utah Jazz who we know from other literature may
+have a stronger home court advantage. The sample size of home games
+for the individual teams in the bubble was far too small to try and
+address this question, the Jazz and Nuggets only had 3 and 9 home
+games, respectively.
 
 # Appendix {#sec:Appendix}
 ```{r, echo=FALSE}
