@@ -21,17 +21,17 @@ header-includes:
 toc: False
 ---
 Abstract:
-The 2020 NBA playoffs were played inside of a bubble in Disney World because of
+The 2020 NBA playoffs were played inside of a bubble at Disney World because of
 the COVID-19 pandemic. This meant that there were no fans in attendance,
-games played on neutral courts and no traveling for teams, which in theory
-removes home-court advantage from the games. This setting has attracted much
-discussion as analysts and fans debated the possible effects it may have on the
+games were played on neutral courts and no traveling for teams. In theory,
+this should remove home-court advantage from the games. This setting genereated
+discussion and concerns, as analysts and fans debated the possible effects it may have on the
 outcome of games. Home-court advantage has historically played an influential
-role in NBA playoff series outcomes. The 2020 playoff provided a unique
+role in NBA playoff series outcomes. The 2020 playoffs provided a unique
 opportunity to study the effects of the bubble and home-court
 advantage by comparing the 2020 season with the seasons in the past.
 While many factors contribute to the outcome of games, points scored
-is the deciding factor of who wins games, so scoring is the primary focus
+is the deciding factor of who wins. Thus, scoring is the primary focus
 of this study. The specific measures of interest are team scoring totals and
 team shooting percentage on two-pointers, three-pointers, and free throws.
 Comparing these measures for home teams and away teams in 2020 vs. 2017-2019
@@ -49,27 +49,28 @@ out.width = "90%", fig.align = "center", dev = "pdf")
 # Introduction {#sec:intro}
 Home-court advantage is often discussed in sports circles as a contributing
 factor to the outcome of games. It is well-known that the home team typically
-benefits from some competitive edge from playing at their home-court, resulting
+benefits from some competitive edge while playing at their home-court, resulting
 in a better chance of winning. Thus, the NBA playing the 2020 playoffs in a
 bubble due to the COVID-19 pandemic
-brought a great deal of concern for fans, teams, journalists, and others.
-Among the biggest is the effect from the crowd, a home crowd has the ability
+brought a great deal of concern for fans, teams, journalists, and others. The bubble environment
+would not be able to replicate many of the factors that normal home-court advantage relies on.
+Among the biggest is the effect from the crowd. The home crowd has the ability
 to energize home teams, help control momentum in favor of the home team and 
 create a chaotic and stressful environment for away teams to play in. There 
 is no way replicate these effects in the bubble conditions. Also, there are 
-geographic factors that are lost like altitude and time-zone effects. There's 
-evidence teams across all sports in high altitude regions can rely on away
+geographic factors that are lost, like altitude and time-zone effects. There's 
+evidence across all sports that teams in high altitude regions can rely on away
 teams coming in and struggling with lower oxygen levels at a higher altitude, 
 which the home teams are accustomed to playing with \citet{Lopez}. Examples,
 of high altitude teams in the NBA would be the Utah Jazz and Denver Nuggets, 
 both of whom participated in the 2020 NBA bubble. Also, referees are known to
-be subject to favoring home teams in large part due pressure from fans, which
+be subject to favoring home teams. This is due in large part to pressure from fans, which
 is no longer in play in the bubble. Refs may still have biases, but there's
 nothing to sway that bias towards the home team like normal. Any positive 
 effects of the home team playing in the arena they're most comfortable in 
 and living in the comfort of their own home are also lost. Travel is also 
 normally discussed as a factor hurting away teams, but for the context of
-the playoffs in the bubble losing this may not be significant. In the
+the playoffs in the bubble, losing this may not be significant. In the
 playoffs, many times (aside from the first game of the series when the 
 away team travels) both teams often travel at the same time since they're 
 both going back and forth between the two cities to complete the series.
@@ -95,7 +96,7 @@ of how home-court advantage affects home and away teams in the NBA.
 
 
 Our study is quite different from earlier NBA home-court advantage studies.
-By using the neutral site games of 2020 we will get to compare home and away
+By using the neutral site games of 2020, we will get to compare home and away
 performance to a control. Typically, studies just compare home vs away
 performance. These studies do not separate the effects of home-court advantage
 into the specific effect on the home team and the specific effect on the away
@@ -129,28 +130,27 @@ of the home and away teams.
 
 
 # Literature Review {#sec:litrev}
-There is a voluminous literature on the effects of home-court advantage.
+There is voluminous literature on the effects of home-court advantage.
 Many NBA home-court advantage studies analyze the effects by studying shooting
-percentages. @Kotecki reported significant home-court advantage using performance-based
-statistics, specifically field goal percentage, free throw percentage, and
-points by comparing home performance vs. away performance in games.
-All of which he showed significantly indicates that
-home-court helps teams play better. @Cao studied the effects
+percentages. @Kotecki reported significant evidence of home-court advantage by 
+comparing field goal percentage, free throw percentage
+and points scored in home vs. away teams. He found all of these measures showed evidence that
+home-court advantage helps home teams play better. @Cao studied the effects
 of pressure on performance in the NBA. Using free throws as their measure of
 interest, they tested whether home
 fans could distract and put pressure on opposing players to make free
 throws. However, they did not find significant evidence
 evidence that home status has a substantial impact on missing from the free throw
-line. @Harris used two point shots, three-point shots and free throws as measures
+line. @Harris used two-point shots, three-point shots and free throws as measures
 of interest to study home-court advantage. Two point shots were found to be
 the strongest predictor of home-court advantage. They suggested
 that home teams should try to shoot more two point shots and force
-their opponent to take more two point shot attempts. This minimum variance strategy will 
+their opponent to take more two point shot attempts. This will 
 help home teams have a greater control of the game play and help maximize the benefits 
 home court advantange.
 
 
-Some studies focus less on shooting and more on scoring differences and other metrics.
+Some studies focus less on shooting and more on other metrics.
 For example, @Greer focused on the influence of spectator booing on
 home-court advantage in basketball. The three methods of performance used
 in this study were scoring, violations, and turnovers. This study was conducted
@@ -183,8 +183,9 @@ about the significance of these four game location factors. Since 1992 they foun
 that results on these four factors are mixed. However, there is some evidence
 supporting crowd and travel factors impact games across all major sports. There is less
 evidence suggesting learning and rule factors impact across the various collegiate 
-and professional sports, regardless, the NBA is not a league which has rules that
-may favor the home team like batting last in the MLB. One interesting finding cited
+and professional sports. The NBA is not a league which has rules that
+may favor the home team, like batting last in the MLB, but these rule factors 
+also account for referee bias which may impact the NBA. One interesting finding cited
 by @Carron2005 is that in the absence of crowds result in overall performance increases.
 Lastly, as discussed in the introduction @Lopez find evidence that geographic
 factors like altitude may influence and strengthen home court advantage for teams in
@@ -224,19 +225,21 @@ shooting percentages for home and away teams on two-pointers, three-pointers, an
 free throws. These variables were very popular and frequently used in the related
 literature discussed earlier. While many other measures could be used for examining
 the outcome of the game and team performance, scoring seemed to be the most
-important. The winner of a game is determined by who scores more points. The three 
-types of shots are anatural discussion point in basketball, as they're all
+important because the winner of a game is determined by who scores more points. Furthermore, the three 
+types of shots are a natural discussion point in basketball, as they're all
 important and directly impact scoring totals. Free throws can often determine the winner of close
 games, as losing teams are forced to foul the winning team to
 stop the clock and hope for some missed free throws. The three
-point shot has grown very prominent in basketball as the entire NBA has increased
+point shot has grown very prominent in basketball. The entire NBA has increased
 their volume of three point shot attempts in response to the
-recent success of the Golden State Warriors and Stephen Curry. Due to this fact, 
-there is a growing consensus the three point shot is most important in basketball. 
+recent success of the Golden State Warriors and Stephen Curry.  Due to this
+fact, there is a growing consensus the three point shot is crucial because
+of the efficient scoring and floor spacing it provides offenses.  
 However, two point shots are not to be overlooked and may
 actually be most important, especially for home teams, according
 to \citet{Harris}. In fact, 2020 NBA champion Los Angeles Lakers actually led league
-in two point percentage throughout the playoffs and were bottom five in three point percentage.
+in two-point shooting percentage throughout the playoffs and were bottom 
+five in three-point shooting percentage.
 
 The data was collected on a game by game basis, this gave us two observations
 for each variable per game played, one observation for each team(home and away).
@@ -251,7 +254,8 @@ one winner and one loser making the outcome a binary variable, with
 one indicating a win and zero indicating a loss.
 
 
-Home-court advantage is the basic idea that the home team is more likely to win.
+Home-court advantage is the basic idea that the home team is more likely to win given 
+they benefit from positive effects of a few factors we discussed earlier.
 So laying a foundation of typical home-court advantage is crucial. Before
 focusing on the 2017 to 2020 playoffs we can take a quick look at home team win
 percentages since 2010. Notice in Figure \@ref(fig:Fig1), the 10 years before 2020, the home team
@@ -281,8 +285,8 @@ Moving on to the main focus of the study, comparing 2020 to 2017-2019.
 Figure \@ref(fig:Fig2) shows the histograms of the home (green) and
 away scoring (red) for 2020 vs. 2017-2019. All histograms are
 fairly bell shaped, which is important for statistical tests
-designed for normally distribute data. There appears to be little
-difference between the 2020 and 2017-2019 for home scoring, but for
+designed for normally distributed data. There appears to be little
+difference between the 2020 and 2017-2019 for home scoring. For
 away scoring, a more pronounced shift to the right in 2020 is observed
 compared with that in 2017-2019.
 
@@ -307,7 +311,7 @@ free throws for 2020 (top) vs. 2017-19 (bottom). The histograms appear to be fai
 similarly distributed between 2020 and 2017-19. Likewise, Figure \@ref(fig:Fig4),
 shows the same percentages except for away teams. It appears that the
 two-point shooting percentage for away teams has a small shift to the
-right in 2020 relative to that in 2017-2019.
+right in 2020 relative 2017-2019.
 
 (ref:cap-Fig3) Histograms of home shooting percentages for two-
 pointers, three-pointers and free throws for 2020 (top) vs. 2017-19 (bottom)
@@ -365,16 +369,15 @@ ggplot(awaygraph) +
 The 2020 bubble provides a new and exciting opportunity to study home-court
 advantage for the NBA. Unlike college basketball, aside from a few
 exhibition/preseason games, the NBA always has a home and away team. So, for
-the first time in NBA history the bubble allows NBA home and away performance
-to be compared vs a control/neutral field. The NBA bubble, as a neutral court,
-removed all 4 possible game location factors impacting home-court advantage
-hypothesized by @Carron1992. The NBA bubble featured 8 seeding games then a
-standard playoff format. The focus of this study was the play during the playoff
-games since it followed the standard playoff format and can easily be compared
+the first time in NBA history, the bubble allows NBA home and away performance
+to be compared against a control/neutral field. The NBA bubble
+removed many, if not all, of the factors impacting home-court advantage. The NBA bubble featured 8 seeding games 
+for each team, then a standard playoff format. The focus of this study was on the play during the playoff
+games since it followed the standard playoff format and could be compared
 back to other playoffs. For this study, the 2020 playoffs were compared against
 the three previous playoffs collectively. To control
 for the changing play style of the NBA, we limit the study to 2020 vs 2017-2019
-for the faster pace play and more common use of the three-point shot
+due to the faster pace play and more common use of the three-point shot
 in modern basketball. If we used data from say 10 years ago, or earlier, observed
 differences may not be from effects of the NBA bubble, but rather from the effects
 of drastic changes in the style of play between the seasons. However, basketball
@@ -388,12 +391,12 @@ shooting. Comparing the differences in these metrics for home and away teams in
 2020 vs previous years will provide valuable insights to the understanding of
 home-court advantage. We can see how going on the road may negatively impact
 away performance and how playing at home may positively impact home performance.
-If there are differences in scoring for home or away teams the differences can
+If there are differences in scoring for home or away teams, the differences can
 be used to show how home-court advantage affects overall performance of home
 and away teams. While testing for differences in shooting will provide added
 context for how home-court advantage specifically affects performance.
 Shooting percentages are not the only possible metrics affected by home-court
-advantage, but they are the most obvious and certainly an important one.
+advantage, but they are the most obvious and likely most important one.
 
 
 We formulate the following nine specific research questions to test
@@ -417,11 +420,11 @@ the central limit theorem given the sample size in this application.
 
 
 We also conducted nonparametric tests that are distribution free to
-confirm the results from the $z$-test. For question~1, we used
-Fisher's exact test for a contigency table which summarizes the wins
+confirm the results from the $z$-test. For question 1, we used
+Fisher's exact test for a contingency table which summarizes the wins
 and losses of the home team in the 83 games in 2020 and the 243 games
 in 2017-2019. For all other eight questions, the data are the scores
-or shooting percentages from the 84 games in 2020 and the 243 games in
+or shooting percentages from the 83 games in 2020 and the 243 games in
 2017-2019. We used Wilcoxan's rank-sum test. 
 
 
@@ -526,7 +529,7 @@ Note: Home and Away scoring totals are divided by 100
 Starting from the top of the 
 Table \@ref(tab:table) summarizes p-values of the nine hypotheses for both
 $z$-tests and Wilcoxon tests. The p-values are all fairly similar for both
-tests giving strong confidence in conclusions drawn. Also reported are 
+tests giving strong confidence in conclusions drawn. Also, reported are 
 the point estimates of the two samples in each comparison.
 
 
@@ -567,15 +570,15 @@ conditions as a visiting team.
 
 
 # Discussion {#sec:disc}
-Generally it seemed that away teams fared better in the 2020 NBA playoff bubble
+Generally, it seemed that away teams fared better in the 2020 NBA playoff bubble
 than previous years on the road. Starting from the dip in home winning percentage
-to below 0.482 it is clear that something was different. Although the difference was not
+to below 0.482, it is clear that something was different. Although, the difference was not
 significant after a Bonferroni correction it is still informative to consider and
 understand that home teams seemed to struggle to win compared to normal conditions.
-Compared to @Kotecki who finds home teams consistently have a significantly
-better record than away teams boasting about a 60.5% win percentage in his sample,
+Compared to @Kotecki, who finds home teams consistently have a significantly
+better record than away teams boasting about a 60.5% win percentage, in his sample,
 the 48.2% home winning percentage of 2020 home teams is quite a shift.
-In this study, home teams did not benefit from the usual advantages provided by
+In this study, home teams did not appear to benefit from the usual advantages provided by
 being the home team.
 
 
@@ -595,12 +598,12 @@ At least some of that improvement from away teams came from significantly higher
 two-point efficiency. This corresponds with the conclusion from \citet{Harris},
 where they found home teams are best suited to capitalize on advantages from two-point
 shots. Normally, by shooting more two-pointers themselves and forcing away teams to
-shoot more two-pointers the home team benefits from increasing effects of
+shoot more two-pointers, the home team benefits from increasing effects of
 home-court advantage. However, with away teams significantly improving two-point
-shooting in the bubble this strategy was no longer viable and home-court
+shooting in the bubble, this strategy was no longer viable and home-court
 advantage disappeared.
 
-To get a bit more detailed, we saw an estimated 3\% increase in away two point
+To get a bit more detailed, we saw an estimated 3\% increase in away two-point
 shooting percentage. Likewise, NBA teams shot
 an average of about 53 two point shots per game, in our data, leading to a three 
 point increase in total scoring. Even this
@@ -609,12 +612,12 @@ games. Around 1/3 of NBA games end by a decision of six points or less, those
 are the games where the three points matter most. Suppose there are 30 seconds
 left and the away team is losing. If the away team has the ball, only down three, 
 they can take their time finding a good shot which can
-still either be a two or three, given the score and remaining time. In the context 
+still either be a two or three given the score and remaining time. In the context 
 of the NBA bubble, this crucial possession also has the benefit of the away team
 getting to work in silence without the jeers from enemy fans. However, in the
 same situation while being down six the offense must rush to get a quick shot
-off, which probably has to be a three pointer. This is a much more desperate
-circumstance, less likely to have a positive outcome and even in the positive
+off, which probably has to be a three pointer. This three point swing creates a much more desperate
+circumstance which is less likely to have a positive outcome. Even in the positive
 outcome case you're still going to be down three and likely have to foul the
 opposing team after you score. 
 Alternatively, if the away team is playing defense with 30 seconds left, only down 
@@ -622,13 +625,32 @@ three, you can play regular defense without fouling, get a stop, then draw up a 
 to score a three pointer with the remaining six seconds. However, in the same scenario 
 down six, you have no choice, but to foul. The free throws will likely put you down
 seven or eight points, but the alternative is let the opponent run the 24 second shot 
-clock down wasting time. Also, the away team may even be in a situation where they're
+clock down wasting time. Similarly, the away team may even be in a situation where they're
 leading by the three additional points, which for the same logic as explained above 
 puts them in far greater control of the game. Clearly, the three point swing can 
 drastically change probability of winning for a team down the stretch of a game. 
 Since, home teams picked up an additional two points per game on average vs. five 
 for away teams, the three additional points from two point shooting appear to be the 
 driving factor of away teams closing the gap with home teams.
+
+There are a few possibilities that might create this increase in two-point shooting percentage. 
+One could be the possible removal of officiating bias in favor of the home team during the
+bubble. Away teams in the bubble may have benefited from more fouls called on drives to
+the basket. On drives to the basket there can often be a lot of contact with no clear
+foul, these calls are then up to the ref's discretion. Typically, refs may be more
+reluctant to blow the whistle against the home team, in front of their crowd, on this 
+type of play. The NBA only records an attempted shot when a foul is called on the shot
+if the shot is made. So, when away teams are fouled, but it is not called because it's 
+a often at the ref's discretion to make the call, they'll likely miss and be credited the 
+miss. However, in the bubble if fouls are called more fairly, the missed shots from uncalled
+fouls are removed and two-point shooting would increase. This wouldn't affect three-point 
+shooting because those fouls are more clear and less up to ref's discretion. Another possibility
+, without the crowd noise inhibiting their offense, away teams were able to more easily
+run their offensive sets that generate easy two-point looks at the rim. Also, away teams
+being generally more confident without opposing fans present, may have been more inclined
+to attack the basket and get an easy look close to the rim. It's hard to say for sure what 
+cause the increase in away two-point shooting, but these are all possibilities. 
+It may also be a combination of all of these. 
 
 An interesting finding is all shooting and scoring numbers for both home and
 away teams did make at least small increases. Although these increases
@@ -695,7 +717,7 @@ just shooting efficiency to pick through looking for more possible sources of
 added points for away teams. This will further help explain what is lost in the
 performance of away teams when they travel to opposing arenas. This study is only
 the beginning of possibilities for studies using the 2020 NBA bubble as a case study
-for home-court advantage. Although the study is limited by a one time
+for home-court advantage. Although, the study is limited by a one time
 sample, it seems unlikely that these conditions will ever be
 repeated. It may not be possible to have a follow-up study using the
 same measures with a different sample. Otherwise, that type of study
