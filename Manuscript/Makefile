@@ -1,52 +1,26 @@
-## define the name of source files as below
-rmd_source := $(wildcard *.Rmd)
-
-## preamble in .tex under directory latex
-preamble := $(wildcard latex/*.tex)
-
-## corresponding output names
-pdf_out := $(patsubst %.Rmd,%.pdf,$(rmd_source))
-html_out := $(patsubst %.Rmd,%.html,$(rmd_source))
-
-## CRAN mirror
-repos := https://cloud.r-project.org
-
+source := $(wildcard *.tex)
+bib := $(wildcard *.bib)
+out := $(patsubst %.tex,%.pdf,$(source))
+latest := $(shell git log -1 --pretty=format:"%h")
+rev := $(latest)
 
 .PHONY: all
-all: $(pdf_out) # $(html_out)
+all: $(out)
 
-.PHONY: pdf
-pdf: $(pdf_out)
+%.pdf: %.tex $(bib)
+	@latexmk -halt-on-error -pdf $<
+##	@latexmk -c
 
-%.pdf: %.Rmd _output.yml $(preamble)
-	@$(MAKE) -s check
-	@echo "compiling to pdf file..."
-	@Rscript --vanilla -e \
-	"rmarkdown::render('$<', 'bookdown::pdf_document2')" \
+## compare modification with the latest version checked into git
+## for comparison of specific commits:
+##	latexdiff-vc --git -r old_githash -r new_githash --pdf source.tex
+diff:
+	latexdiff-vc --git --pdf --force $(source) -r $(rev)
 
+log:
+	@git log -5 --pretty=format:"%h by %an at %ar: %s" $(source)
 
-.PHONY: html
-html: $(html_out)
-
-%.html: %.Rmd _output.yml
-	@$(MAKE) -s check
-	@echo "compiling to html file..."
-	@Rscript --vanilla -e \
-	"rmarkdown::render('$<', 'bookdown::html_document2')"
-
-
-.PHONY: check
-check:
-	@Rscript -e \
-	"foo <- 'bookdown' %in% installed.packages()[, 'Package'];" \
-	-e "if (! foo) install.packages('bookdown', repos = '$(repos)')" \
-
-
-.PHONY: clean
+.PNONY: clean
 clean:
-	@rm -rf *.aux *.bbl *.blg *.fls *.fdb_latexmk\
-		*.log *.out .Rhistory *\#* .\#* *~
-
-.PHONY: rmCache
-rmCache:
-	rm -rf *_files *_cache
+	rm -rf $(out) *~ .*~ .\#* .Rhistory *.aux *.bbl *.blg *.dvi *.out *.log *.toc \
+	*.fff *.fdb_latexmk *.fls *.ttt *diff* *oldtmp* .blb

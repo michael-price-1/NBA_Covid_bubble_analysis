@@ -1,0 +1,16 @@
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.gz
+*.pdf
+*.fdb_latexmk
+*.fls
+
+*/*.RData
+*/.DS_Store
+
+*/*.nav
+*/*.snm
+*/*.toc

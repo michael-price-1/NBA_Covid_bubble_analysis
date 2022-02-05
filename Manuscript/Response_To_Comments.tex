@@ -47,13 +47,16 @@
 \end{center}
 
 \section*{Summary}
+\jy{Practice the line width style in tex source}
 
 We thank the two referees for their insightful, constructive
-comments. In particular, we are grateful to referee~1 for providing many helpful, direct and concise comments using annotations. Also, to referee~2, who took the time to provide detailed explanations for each suggestion making it clear how and why the changes were important.
-
+comments. In particular, we are grateful to referee~1 for providing
+many helpful, direct and concise comments using annotations. Also, to
+referee~2, who took the time to provide detailed explanations for each
+suggestion making it clear how and why the changes were important.
 
 The manuscript has been revised to incorporate the comments from the
-referees with the following most notable changes:
+referees with the following most notable additions:
 
 \begin{enumerate}
 \item
@@ -64,8 +67,10 @@ referees with the following most notable changes:
   Alterations to graphs and charts to better and more clearly describe the data and findings.
 \end{enumerate}
 
-Point-by-point responses are as follows.
+Point-by-point responses are as follows with the original comments in \emph{italic}.
 
+\jy{In each response, be more specific on the location of the changes made (give
+  paragraph numbers in which section)}
 
 \section*{To Referee~1}
 
@@ -75,9 +80,9 @@ Point-by-point responses are as follows.
 
  The paper was carefully reread and edited, line by line, in order to correct grammar errors and improve the overall flow of the paper.
  
-\begin{comment}
-Comments in the pdf. 
-\end{comment}
+% \begin{comment}
+% Comments in the pdf. 
+% \end{comment}
 
 There were a series of brief comments provided on an annotated version of our manuscript submission. This included many small comments for missing words or asking for a brief clarification about a point made. These comments were addressed accordingly and were resolved. The more extensive comments/concerns are addressed individually below.
 
@@ -85,7 +90,7 @@ There were a series of brief comments provided on an annotated version of our ma
   Reference lines (mean/median) would be nice in the graphs to more clearly see the small shifts.
 \end{comment}
 
- Code was added to the ggplot code which added a reference line at the mean for all applicable histograms.
+The figures were remade with added reference line at the mean for all applicable histograms.
  
 \begin{comment}
 Use of adjusted p-values was appreciated, but those should be listed in the table.  I would also recommend using either the nonparametric (Wilcoxon) or parametric (t-test) exclusively—no need for both.  I think the assumptions are satisfied for the parametric test.  Fisher’s exact test is appropriate
@@ -154,8 +159,12 @@ advantage in the bubble could impact teams differently, and NBA teams Nuggets an
 more than other teams since they no longer benefit from an altitude advantage.
 \end{comment}
 
- We are very grateful referee~2 brought this additional source to our attention. It was added to Literature Review and discussed in the Introduction when setting up and explaining the factors that would be missing from normal home-court advantage when playing in the NBA bubble. The most noteworthy point added from this paper, as pointed out by referee~2, was the evidence supporting geographic factors impact home-court advantage. Particularly, teams like the Utah Jazz and Denver Nuggets are the NBA teams who would benefit from the high-altitude effects. This is discussed in more detail in the manuscript.
- 
+ We are very grateful that referee~2 brought \citet{Lopez} to our attention. It was added to Literature Review and discussed in the Introduction when setting up and explaining the factors that would be missing from normal home-court advantage when playing in the NBA bubble. The most noteworthy point added from this paper, as pointed out by referee~2, was the evidence supporting geographic factors impact home-court advantage. Particularly, teams like the Utah Jazz and Denver Nuggets are the NBA teams who would benefit from the high-altitude effects. This is discussed in more detail in the manuscript.
+
+ \jy{Check the references of Lopez's paper to see if we can cite
+   anything there; this is also a place to mention the additional
+   references you found. }
+
 \begin{comment}
 In your plots with histograms, it would be useful to have a vertical line showing the mean to visually compare
 the two distributions.
@@ -235,11 +244,11 @@ home team’s score to go down, for example? Do the home advantage only impact o
 About study author-remove “will”
 \end{comment}
 
-The misplaced word "will" was removed from the about the author section.
+Done.
 
 
 \bibliographystyle{chicago}
-\bibliography{fpref}
+\bibliography{citations}
 
 
 \end{document}
