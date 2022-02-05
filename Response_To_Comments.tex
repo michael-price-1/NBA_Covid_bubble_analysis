@@ -1,0 +1,250 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+
+\usepackage{xr-hyper}
+\RequirePackage[colorlinks,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage{listings}
+\usepackage{rotating, graphicx}
+\usepackage{booktabs, natbib}
+
+\usepackage{amsmath, enumerate, quoting, amssymb, subfigure, url}
+
+\usepackage{color}
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+\newcommand{\gv}[1]{\textcolor{blue}{(GV: #1)}}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\cov}{Cov}
+\DeclareMathOperator*{\corr}{Corr}
+
+\usepackage{xr}
+\externaldocument{isgee}
+\externaldocument{supp}
+
+% remove left indentation in itemize
+\usepackage{enumitem}
+\setlist[itemize]{leftmargin=*}
+
+\usepackage{xcolor}
+\newcommand{\jy}[1]{\textcolor{red}{(JY: #1)}}
+
+% graph path
+\graphicspath{{./figs/}}
+
+\quotingsetup{leftmargin = 0pt}
+
+\newenvironment{comment}%
+{\begin{quoting}\noindent\small\it\ignorespaces%
+  }{\end{quoting}}
+
+
+
+
+\begin{document}
+
+\begin{center}
+  {\Large\bf Response to the Comments on Manuscript}
+\end{center}
+
+\section*{Summary}
+
+We thank the two referees for their insightful, constructive
+comments. In particular, we are grateful to referee~1 for providing many helpful, direct and concise comments using annotations. Also, to referee~2, who took the time to provide detailed explanations for each suggestion making it clear how and why the changes were important.
+
+
+The manuscript has been revised to incorporate the comments from the
+referees with the following most notable changes:
+
+\begin{enumerate}
+\item
+  Additional commentary and thoughts on what caused away teams to be more affected by neutral courts more than home teams.
+  \item
+  A deeper discussion on the significance and impact of the shift in two-point shooting.
+\item
+  Alterations to graphs and charts to better and more clearly describe the data and findings.
+\end{enumerate}
+
+Point-by-point responses are as follows.
+
+
+\section*{To Referee~1}
+
+\begin{comment}
+  I’d have the paper examined for grammar.  I think there are commas missing or misplaced periodically. Couldn’t add that to the pdf effectively.
+\end{comment}
+
+ The paper was carefully reread and edited, line by line, in order to correct grammar errors and improve the overall flow of the paper.
+ 
+\begin{comment}
+Comments in the pdf. 
+\end{comment}
+
+There were a series of brief comments provided on an annotated version of our manuscript submission. This included many small comments for missing words or asking for a brief clarification about a point made. These comments were addressed accordingly and were resolved. The more extensive comments/concerns are addressed individually below.
+
+\begin{comment}
+  Reference lines (mean/median) would be nice in the graphs to more clearly see the small shifts.
+\end{comment}
+
+ Code was added to the ggplot code which added a reference line at the mean for all applicable histograms.
+ 
+\begin{comment}
+Use of adjusted p-values was appreciated, but those should be listed in the table.  I would also recommend using either the nonparametric (Wilcoxon) or parametric (t-test) exclusively—no need for both.  I think the assumptions are satisfied for the parametric test.  Fisher’s exact test is appropriate
+\end{comment}
+
+ Columns were added to the results table to accommodate including the adjusted p-values. As for including both the non-parametric and parametric tests, we think including both is justified. We felt it strengthens the confidence in the results when the conclusions from each the non-parametric and parametric tests agree with one another. While the assumptions appear to be met for parametric test, it does not hurt to show tests not dependent on assumptions also show significant results.
+ 
+\begin{comment}
+ Why are two pointers singled out in the data? Any insight on why 2P\% is affected more? I would provide some insight. My hypothesis is officiating bias as shown in many papers (less discretion on 3P fouls). 
+\end{comment}
+
+ We thank the reviewer for bringing this concern to our attention. We realize we missed discussing the significance of studying each type of shot individually, not just 2-pointers. Discussion on the importance of examining each of the three types of shot was added, including the 2-point shot.
+
+\begin{comment}
+Comment a bit on these effect sizes. Does a 3\% decrease in 2P\% matter in a game? That may only be 1 shot. While it's statistically significant, I wonder if it's practically significant.
+\end{comment}
+
+ A paragraph was added to the discussion section detailing the practical significance of the 3\% change in 2-point shooting. In short, many NBA games are decided by 6 points or less and in those games late-game strategy is completely dependent exactly how many points one team is behind. Even a small shift in score can drastically shift probability of outcomes and strategy for teams. The paper now goes into detail on how a 3-point swing in these close games can completely change the game.
+
+\begin{comment}
+Would be interesting to examine if these home court advantages are more pronounced for specific teams.
+\end{comment}
+
+ We are appreciative of this suggestion for another possible topic of analysis. Cross referencing this comment with the source provided by referee~2, we definitely have reason to believe the shift in home-court advantage would be more pronounced for specific teams. However, we didn't have the sample size to test for strength home-court advantage in individual teams. The teams we'd expect to have the most pronounced affect, the Denver Nuggets and Utah Jazz, only played 9 and 3 home games, respectively, in the bubble. We did add some comments about this in the conclusion explaining how this analysis would be possible if generating a larger sample were possible and what we'd expect to see.
+
+
+\section*{Referee 2}
+
+\subsection*{Major comments}
+
+\begin{comment}
+Good motivation of the problem and why we have additional useful information to answer questions about
+home advantage.
+It would be good to mention here, or elsewhere, different (potential) sources of home advantage, and discuss
+which may/may not still exist in the NBA bubble. For example,
+\item
+• Travel miles/time
+\item
+• Time zone changes
+\item
+• Days rest (back-to-back)
+\item
+• Altitude
+\item
+• Attendance/crowd
+\item
+• Referee bias
+\item
+• Being at home, familiar surroundings, sleeping in own bed
+\item
+This is partly in the literature review where you discuss Courneya and Carron’s article, but I think you could
+touch on that there are different sources of home advantage somewhere in the introduction. There are, for
+example, no travel miles differences between the two teams and (I think) no back-to-back games, so home
+advantage from those probably doesn’t exist in the bubble. There may, for example, still be referee bias in
+the bubble, though. Referee bias may only exist when there’s a home crowd, this case the video monitors
+and the handful of attendees don’t affect referee. Or it might exist because referees know who the home
+team is.
+\end{comment}
+
+ We thank the reviewer for being appreciative and understanding of the good motivations driving this paper. We agree that a deeper discussion of why home-court advantage would not exist in the bubble would be beneficial to setting up the paper. We added in a discussion of why all the different factors play into creating home-court advantage and how each one may or may not still exist in the bubble. For the most part, these factors disappeared in the context of the bubble, except travel/time and miles for reasons we discuss in the paper. 
+
+\begin{comment}
+Also, this paper https://arxiv.org/abs/1701.05976 finds that altitude matters (Colorado and Utah teams
+have the highest home advantage in multiple sports), so that could be added/discussed. So changes in home
+advantage in the bubble could impact teams differently, and NBA teams Nuggets and Jazz could be hurt
+more than other teams since they no longer benefit from an altitude advantage.
+\end{comment}
+
+ We are very grateful referee~2 brought this additional source to our attention. It was added to Literature Review and discussed in the Introduction when setting up and explaining the factors that would be missing from normal home-court advantage when playing in the NBA bubble. The most noteworthy point added from this paper, as pointed out by referee~2, was the evidence supporting geographic factors impact home-court advantage. Particularly, teams like the Utah Jazz and Denver Nuggets are the NBA teams who would benefit from the high-altitude effects. This is discussed in more detail in the manuscript.
+ 
+\begin{comment}
+In your plots with histograms, it would be useful to have a vertical line showing the mean to visually compare
+the two distributions.
+
+It seems like you made this using facet\_grid(shot.type ~ season) or something similar. I think it would
+be easy to add vertical lines fairly easily by using group\_by and summarise to make a data frame df.means
+like this
+
+season shot.type mean.perc
+
+2020 2p xx.x
+
+2020 3p xx.x
+
+2020 ft xx.x
+
+2017-2019 2p xx.x
+
+2017-2019 3p xx.x
+
+2017-2019 ft xx.x
+
+and then adding
+geom\_vline(data=df.means, aes(x=mean.perc)) +
+somewhere in your ggplot code.
+
+If the columns season and shot type are the same as in your other data
+set, and the same names used in facet\_grid, a different vertical line should show up for each season and shot type.
+\end{comment}
+
+ While this was not the exact coding solution used to add reference lines to the histograms, it was greatly appreciated and was the perfect stepping stone to finding the code solution. As mentioned earlier, the code was added to include a reference line at the mean on each histogram we provided.
+
+ 
+\begin{comment}
+If you use a regression, you could take into account strength of team, strength of opponent, and home
+advantage simultaneously. This could be done with any of the metrics you considered. For example,
+Score ~ 1 + HomeTeamOnOffenseIndicator + OffensiveTeam + DefensiveTeam
+Did you consider a regression? Why would it, or would it not, be useful? If strength of opponent (in the
+example above, the DefensiveTeam) doesn’t vary much from team to team (in other words, if there is a
+balanced schedule), then it might not be that helpful to account for strength of opponent. If it does vary a
+lot, then it might help.
+In a typical regular season, the NBA schedule is pretty balanced. Is the schedule a balance schedule in the
+bubble?
+Would accounting for team strength change the home advantage estimates? If so, in what situations would
+it increase home advantage estimates? Decrease?
+You don’t necessarily have to do all of this analysis, but you should at least discuss somewhere why you
+didn’t use a regression, and justify your decision. I’m not saying that a regression is necessarily better,
+and the answers to the above questions might suggest it wouldn’t help. But a lot of people would think of
+estimating home advantage using a regression by including a home indicator like the example above, and
+then using the hypothesis test where the null hypothesis is that the regression coefficient for home indicator
+is zero. So it is important to, at minimum, discuss your choice to not use a regression, and justify that
+choice.
+\end{comment}
+
+ This is certainly a interesting suggestion and something we explored. However, we elected to not add the regression to the paper. We did take the suggestion to add a paragraph to the paper explaining why the hypothesis testing alone sufficed to answering our research questions without need for the regression. We did not consider accounting for strength of opponent necessary. Given the study was conducted using the playoff teams, match-ups were largely between strong teams with small gaps in ability. Had the study been done using regular season play, controlling for strength of opponent would have been beneficial since bottom-tier teams would be included. More details on why the regression was not required are included in the manuscript.
+
+\begin{comment}
+I’d be interested in hearing more thoughts about why away teams were helped, but home teams weren’t
+hurt, in the bubble. You did mention “No longer having to face the struggle of traveling, pressure from
+opposing fans, or playing on an unfamiliar court”. A little more detail would be nice. Of the factors that
+impact home advantage, which ones were unchanged for the home team, but changed for the away team,
+and in what specific situation?
+For example, when a team has two home games in a row, they didn’t travel pre-bubble in between those
+games, and still didn’t travel in the bubble. If their opponent, the away team, had 2 away games in a row,
+they did travel pre-bubble, but didn’t have to travel in the bubble. So in that case there is a difference in
+home advantage.
+But if the home team instead had an away game before their current home game, then they had to travel
+before their home game, and a lack of travel advantage for the home team doesn’t apply to that game. I
+would imagine this happens frequently, and that 30-40\% of home games are preceded by an away game.
+Also, if away teams were impacted more, wouldn’t they also be better on defense, which would cause the
+home team’s score to go down, for example? Do the home advantage only impact offensive performance?
+\end{comment}
+
+ Thank you for bringing this up, this comment allowed us to revisit the discussion and derive a more clear well-thought out conclusion from the results. A few paragraphs were added to the discussion section of the paper detailing why it is likely only away teams performance were significantly changed. The discussion strengthened our determination that home-court advantage is best categorized as negative effects on away team.
+
+\begin{comment}
+About study author-remove “will”
+\end{comment}
+
+The misplaced word "will" was removed from the about the author section.
+
+
+\bibliographystyle{chicago}
+\bibliography{fpref}
+
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
