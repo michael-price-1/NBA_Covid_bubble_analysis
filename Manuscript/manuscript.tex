@@ -487,9 +487,6 @@ opponent strength is more likely to be important.
 
 \section{Results}
 
-\jy{use booktabs package to add horizontal rules; replace 1 with
-  1.0000; make sure ``Z-test'' is in the same font as in the text.}
-
 \begin{table}[tbp]
   \caption{The results from the 9 tests(* denotes significant p-value at alpha=0.05)
   \\*Note: Home and Away scoring totals are divided by 100}
@@ -499,17 +496,25 @@ opponent strength is more likely to be important.
   \toprule
   & 2020 & 2017--19 & \multicolumn{2}{c}{P-value} & \multicolumn{2}{c}{Adjusted P-value}\\
 \cmidrule(lr){4-5}\cmidrule(lr){6-7}
-  &          &                & Z-test & Wilcoxon & Z-test & Wilcoxon\\
+  &          &                & \(Z\)-test & Wilcoxon & \(Z\)-test & Wilcoxon\\
   \midrule
   Home Win & 0.482 & 0.613 & 0.0497* & 0.0400* & 0.4473 & 0.3598\\
-Home Scoring & 1.101 & 1.081 & 0.2321 & 0.2985 & 1 & 1\\
+  \midrule
+Home Scoring & 1.101 & 1.081 & 0.2321 & 0.2985 & 1.0000 & 1.0000\\
+\midrule
 Away Scoring & 1.091 & 1.040 & 0.0008* & 0.0004* & 0.0075* & 0.0035*\\
-Home 2P & 0.523 & 0.515 & 0.4335 & 0.5719 & 1 & 1\\
-Home 3P & 0.363 & 0.357 & 0.5733 & 0.8852 & 1 & 1\\
+\midrule
+Home 2P & 0.523 & 0.515 & 0.4335 & 0.5719 & 1.0000 & 1.0000\\
+\midrule
+Home 3P & 0.363 & 0.357 & 0.5733 & 0.8852 & 1.0000 & 1.0000\\
+\midrule
 Home FT & 0.793 & 0.774 & 0.0692 & 0.0496* & 0.6228 & 0.4464\\
+\midrule
 Away 2P & 0.536 & 0.504 & 0.0003* & 0.0003* & 0.0030 & 0.0023\\
-Away 3P & 0.357 & 0.346 & 0.3256 & 0.3081 & 1 & 1\\
-Away FT & 0.783 & 0.777 & 0.6601 & 0.8370 & 1 & 1\\
+\midrule
+Away 3P & 0.357 & 0.346 & 0.3256 & 0.3081 & 1.0000 & 1.0000\\
+\midrule
+Away FT & 0.783 & 0.777 & 0.6601 & 0.8370 & 1.0000 & 1.0000\\
   \bottomrule
 \end{tabular}
 \end{table}
