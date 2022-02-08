@@ -278,7 +278,8 @@ ggplot(winyear, aes(x=years, y=winpct))+
       scale_x_continuous(name = "Year", breaks = years, labels = years)+
       scale_y_continuous(name =  "Winning Percentage", limits = c(0.4, 0.8))+
       geom_hline(aes(yintercept = 0.5), color = "green")+
-      geom_text(aes(label=winpct), hjust=0, vjust=-1, size=2)
+      geom_text(aes(label=winpct), hjust=0, vjust=-1, size=2)+
+      theme(aspect.ratio=3/4)
 ```
 
 Moving on to the main focus of the study, comparing 2020 to 2017-2019.
@@ -302,7 +303,8 @@ ggplot(combined) +
   facet_grid(Year ~ Home.Away)+
   theme(legend.position = "none")+
   geom_vline(data=ref_line2, aes(xintercept=PTS))+
-  geom_text(data=ref_line2, aes(x=PTS+3.5, label="mean", y=0.045))
+  geom_text(data=ref_line2, aes(x=PTS+3.5, label="mean", y=0.045))+
+  theme(aspect.ratio=3/4)
 ```
 
 Our second target of inference is shooting percentage for home and away teams.
@@ -336,7 +338,8 @@ ggplot(homegraph) +
   geom_histogram(aes(x = Percentage, y = ..density..), fill = "#00BFC4", bins = 10, binwidth = 5)+
   facet_grid(Year ~ Type)+
   geom_vline(data=ref_line3, aes(xintercept=Percentage))+
-  geom_text(data=ref_line3, aes(x=Percentage+6, label="mean", y=0.075))
+  geom_text(data=ref_line3, aes(x=Percentage+6, label="mean", y=0.075))+
+  theme(aspect.ratio=3/4)
 ```
 
 (ref:cap-Fig4) Histograms of away shooting percentages for two-
@@ -362,7 +365,8 @@ ggplot(awaygraph) +
   geom_histogram(aes(x = Percentage, y = ..density..), fill = "#F8766D", bins = 10, binwidth = 5)+
   facet_grid(Year ~ Type)+
   geom_vline(data=ref_line4, aes(xintercept=Percentage))+
-  geom_text(data=ref_line4, aes(x=Percentage+6, label="mean", y=0.075))
+  geom_text(data=ref_line4, aes(x=Percentage+6, label="mean", y=0.075))+
+  theme(aspect.ratio=3/4)
 ```
 
 # Methods {#sec:methods}
