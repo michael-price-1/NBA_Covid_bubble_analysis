@@ -61,7 +61,7 @@ is no way to replicate these effects in the bubble conditions. Also, there are
 geographic factors that are lost, like altitude and time-zone effects. There's 
 evidence across all sports that teams in high altitude regions can rely on away
 teams coming in and struggling with lower oxygen levels at a higher altitude, 
-which the home teams are accustomed to playing with \citet{Lopez}. Examples
+which the home teams are accustomed to playing with @Lopez. Examples
 of high altitude teams in the NBA would be the Utah Jazz and Denver Nuggets, 
 both of whom participated in the 2020 NBA bubble. Also, referees are known to
 be subject to favoring home teams. This is due in large part to pressure from fans, which
@@ -132,42 +132,41 @@ of the home and away teams.
 # Literature Review {#sec:litrev}
 There is voluminous literature on the effects of home-court advantage.
 Many NBA home-court advantage studies analyze the effects by studying shooting
-percentages. @Kotecki reported significant evidence of home-court advantage by 
-comparing field goal percentage, free throw percentage
-and points scored in home vs. away teams. He found all of these measures showed evidence that
+percentages. @Kotecki reported significant evidence of home-court
+advantage by comparing field goal
+percentage, free throw percentage and points scored in home vs.~away teams.
+He found all of these measures showed evidence that
 home-court advantage helps home teams play better. @Cao studied the effects
-of pressure on performance in the NBA. Using free throws as their measure of
-interest, they tested whether home
+of pressure on performance in the NBA. Using free throws as their measure of interest, 
+they tested whether home
 fans could distract and put pressure on opposing players to make free
 throws. However, they did not find significant evidence
-that home status has a substantial impact on missing from the free throw
-line. @Harris used two-point shots, three-point shots and free throws as measures
-of interest to study home-court advantage. Two-point shots were found to be
-the strongest predictor of home-court advantage. They suggested
-that home teams should try to shoot more two-point shots and force
-their opponent to take more two-point shot attempts. This will 
-help home teams have a greater control of the game play and help maximize the benefits 
+that home status has a substantial impact on missing from the free throw line. 
+@Harris used two-point shots, three-point shots and free
+throws as measures of interest to study home-court advantage. Two-point
+shots were found to be the strongest predictor of home-court advantage. They
+suggested that home teams should try to shoot more two-point shots and force
+their opponent to take more two-point shot attempts. This help home teams have a
+greater control of the game play and help maximize the benefits 
 home-court advantage.
-
 
 Some studies focus less on shooting and more on other metrics.
 For example, @Greer focused on the influence of spectator booing on
 home-court advantage in basketball. The three methods of performance used
 in this study were scoring, violations, and turnovers. This study was conducted
-using the men’s basketball programs at two large universities. The study finds that
+using the men's basketball programs at two large universities. The study finds that
 social support, like booing, is an important contributor to home-court advantage.
 Greer explains, whether the influence is greater on visiting team performance or
 referee calls is less clear. However, the data does seem to lean slightly in
-favor of affecting visiting team performance.  @Harville studied the
-effect of home-court advantage using the 1991-1992 college basketball season.
-Unlike the NBA, it is not uncommon to have a few games played at neutral sites
-during the college basketball season. This allowed them to construct two samples,
-one of home teams and one of neutral teams. They formulated their study in a
-regression predicting the expected difference in score for home teams.
-They set up their study to find if the home teams won games by more points when
-they had home-court advantage vs. when playing at neutral court. This study
-concluded with evidence supporting home-court advantage.
-
+favor of affecting visiting team performance. Another study focused
+on scoring was conducted by @Jones, he analyzes scoring patterns across
+each of the 4 quarters to analyze the effects of home-court advantage over
+the course of a game. He found that typically 2/3 of the benefits of 
+home-court advantage are received in the first quarter with the 
+remaining 1/3 slowly accumulating over the final 3 quarters. This implies
+home-court advantage is most effective when teams use it to build a 
+lead early and maintain it for the remainder of the game. If they are 
+losing after the first quarter, there is a sharp drop in win probability. 
 
 There are also surveys on the factors contributing to home-court advantage.
 @Carron1992 gave four main game location factors for home and away
@@ -177,19 +176,45 @@ a familiar venue; travel factors, the idea that away teams may face
 fatigue and jet lag from traveling; and, rule factors, which says that home teams
 may benefit from some advantages in rules and officiating. They acknowledge that
 these factors would all be removed if games were played at a neutral site, even
-if one team was designated as “home team”. This study was reviewed a decade later
+if one team was designated as ``home team''. This study was reviewed a decade later
 by @Carron2005. The 2005 review goes over the new findings from studies
 about the significance of these four game location factors. Since 1992, they have found
 that results on these four factors are mixed. However, there is some evidence
 supporting crowd and travel factors impact games across all major sports. There is less
 evidence suggesting learning and rule factors impact across the various collegiate 
 and professional sports. The NBA is not a league which has rules that
-may favor the home team, like batting last in the MLB, but these rule factors 
-also account for referee bias which may impact the NBA. One interesting finding cited
-by @Carron2005 is that the absence of crowds results in overall performance increases.
-Lastly, as discussed in the introduction, @Lopez find evidence that geographic
-factors like altitude may influence and strengthen home-court advantage for teams in
-high altitude regions.
+may favor the home team, like batting last in the MLB, but these rule
+factors also account for referee bias which may impact the NBA.  One
+interesting finding cited by @Carron2005 is that the absence of crowds results
+in overall performance increases. Another study by @Price is able 
+to find some evidence of referee bias. They focus on two measures, DTOs and NTOs.
+DTOs, discretionary turnovers, are defined as turnovers always caused by the ref
+blowing the whistle while the ball is in play. NTOs, non-discretionary turnovers, 
+are determined directly by players with no ref whistle, or the ball going out of
+bounds. The use these to test ref bias by checking how variables, like home vs. away
+team, affect DTOs relative to NTOs. They found evidence that a home bias does exist. 
+In fact, home bias increases both during the playoffs and in games with higher attendance.
+This is crucial to the NBA bubble, which consists of playoff games with no attendance. 
+Lastly, as discussed in the introduction, @Lopez
+find evidence that geographic factors like altitude may influence and strengthen home-court
+advantage for teams in high altitude regions.
+
+There are a few examples of natural experiments in basketball. @Harville studied the
+effect of home-court advantage using the 1991-1992 college basketball season.
+Unlike the NBA, it is not uncommon to have a few games played at neutral sites
+during the college basketball season. This allowed them to construct two samples,
+one of home teams and one of neutral teams. They formulated their study in a
+regression predicting the expected difference in score for home teams.
+They set up their study to find if the home teams won games by more points when
+they had home-court advantage vs.~when playing on a neutral court. This study
+concluded with evidence supporting home-court advantage. Also, @Boudreaux 
+is able to construct a natural experiment using the Los Angeles Lakers and 
+Los Angeles Clippers. Since these two teams share a home stadium, many factors like travel 
+and familiarity are nullified. However, the designated home team has larger crowd
+support due to attendance from their season ticket holders. By comparing
+Lakers--Clippers matchups, they single out the effect of having a sympathetic
+crowd and @Boudreaux estimate crowd effects increase the chance
+of winning 21--22.8 percentage points.
 
 
 ```{r data, include=FALSE}
