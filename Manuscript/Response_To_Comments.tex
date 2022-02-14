@@ -134,7 +134,7 @@ That may only be 1 shot. While it's statistically significant, I wonder
 if it's practically significant.
 \end{comment}
 
- A paragraph was added to the Discussion section(fourth paragraph) detailing the practical 
+ A paragraph was added to the Discussion section (fourth paragraph) detailing the practical 
  significance of the 3\% change in 2-point shooting. In short, many NBA games 
  are decided by 6 points or less and in those games late-game strategy is 
  completely dependent exactly how many points one team is behind. Even a small
@@ -213,34 +213,32 @@ could impact teams differently, and NBA teams Nuggets and Jazz could be hurt
 more than other teams since they no longer benefit from an altitude advantage.
 \end{comment}
 
- We are very grateful that referee~2 brought \citet{Lopez} to our attention. 
- It was added to Literature Review(at the end of the third paragraph) and
- discussed in the Introduction(first paragraph) when setting 
- up and explaining the factors that would be missing from normal home-court 
- advantage when playing in the NBA bubble. The most noteworthy point added 
- from this paper, as pointed out by referee~2, was the evidence supporting 
- geographic factors impact home-court advantage. Particularly, teams like 
- the Utah Jazz and Denver Nuggets are the NBA teams who would benefit from 
- the high-altitude effects. This is discussed in more detail in the manuscript.
-  Also, a few other references were added to strengthen the paper.
-  First, \cite{Price} discuss empirical evidence in favor of referee bias towards
-  home teams. Second, \cite{Jones} analyzes the effects of home-court advantage
-  as component parts and how the effects of home-court advantage impact each 
-  individual quarter of play. Lastly, \cite{Boudreaux} uses a natural
-  experiment to estimate how the crowd effect of home-court advantage impacts winning.
+We are very grateful that referee~2 brought \citet{Lopez} to our attention. 
+It was added to Literature Review (at the end of the third paragraph) and
+discussed in the Introduction(first paragraph) when setting 
+up and explaining the factors that would be missing from normal home-court 
+advantage when playing in the NBA bubble. The most noteworthy point added 
+from this paper, as pointed out by referee~2, was the evidence supporting 
+geographic factors impact home-court advantage. Particularly, teams like 
+the Utah Jazz and Denver Nuggets are the NBA teams who would benefit from 
+the high-altitude effects. This is discussed in more detail in the manuscript.
 
- \jy{Check the references of Lopez's paper to see if we can cite
-   anything there; this is also a place to mention the additional
-   references you found. }
+
+In addition, a few other references were added to the Literature Review section.
+First, \cite{Price} discuss empirical evidence in favor of referee bias towards
+home teams. Second, \cite{Jones} analyzes the effects of home-court advantage
+as component parts and how the effects of home-court advantage impact each 
+individual quarter of play. Lastly, \cite{Boudreaux} uses a natural
+experiment to estimate how the crowd effect of home-court advantage impacts winning.
 
 \begin{comment}
 In your plots with histograms, it would be useful to have a vertical 
 line showing the mean to visually compare
 the two distributions.
 
-It seems like you made this using facet\_grid(shot.type ~ season) or
+It seems like you made this using \texttt{facet\_grid(shot.type ~ season)} or
 something similar. I think it would be easy to add vertical lines fairly 
-easily by using group\_by and summarise to make a data frame df.means
+easily by using \texttt{group\_by} and summarise to make a data frame df.means
 like this
 
 season shot.type mean.perc
@@ -258,7 +256,7 @@ season shot.type mean.perc
 2017-2019 ft xx.x
 
 and then adding
-geom\_vline(data=df.means, aes(x=mean.perc)) +
+\texttt{geom\_vline(data=df.means, aes(x=mean.perc)) +}
 somewhere in your ggplot code.
 
 If the columns season and shot type are the same as in your other data
@@ -267,7 +265,7 @@ should show up for each season and shot type.
 \end{comment}
 
  While this was not the exact coding solution used to add reference lines
- to the histograms,it was greatly appreciated and was the perfect stepping 
+ to the histograms, it was greatly appreciated and was the perfect stepping 
  stone to finding the code solution. As mentioned earlier, the code was
  added to include a reference line at the mean on each histogram we provided,
  within the Data section of the manuscript.
@@ -277,7 +275,7 @@ should show up for each season and shot type.
 If you use a regression, you could take into account strength of team,
 strength of opponent, and home advantage simultaneously. This could 
 be done with any of the metrics you considered. For example,
-Score ~ 1 + HomeTeamOnOffenseIndicator + OffensiveTeam + DefensiveTeam
+\texttt{Score \texttildelow 1 + HomeTeamOnOffenseIndicator + OffensiveTeam + DefensiveTeam}.
 Did you consider a regression? Why would it, or would it not, be useful? 
 If strength of opponent (in the example above, the DefensiveTeam) doesn’t
 vary much from team to team (in other words, if there is a
